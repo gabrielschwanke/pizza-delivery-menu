@@ -1,89 +1,292 @@
 <!DOCTYPE html>
-
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Venezza Delivery</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Venezza Delivery | Cardápio Online</title>
+  <meta
+    name="description"
+    content="Cardápio online da Venezza Delivery. Monte seu pedido e finalize rapidamente pelo WhatsApp."
+  />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
 </head>
 <body>
+  <header class="topbar">
+    <div class="container topbar__inner">
+      <a href="#topo" class="brand" aria-label="Ir para o topo">
+        <span class="brand__title" data-store-name>Venezza Delivery</span>
+        <span class="brand__subtitle" data-store-slogan>Sabor que conquista!</span>
+      </a>
 
-  <div class="container">
+      <nav class="nav" aria-label="Menu principal">
+        <a href="#cardapio">Cardápio</a>
+        <a href="#pedido">Pedido</a>
+        <a href="#informacoes">Informações</a>
+      </nav>
 
-```
-<header>
-  <h1>VENEZZA</h1>
-  <p class="subtitle">Sabor que conquista! Peça já</p>
-</header>
-
-<section class="menu">
-  <h2>PIZZAS SALGADAS</h2>
-
-  <div class="item">
-    <div>
-      <h3>Calabresa</h3>
-      <p>Mussarela, calabresa e cebola</p>
+      <a class="btn btn--whatsapp" href="#pedido">Pedir agora</a>
     </div>
-    <div>
-      <span>R$ 45</span>
-      <button onclick="pedir('Calabresa')">Pedir</button>
+  </header>
+
+  <main id="topo">
+    <section class="hero">
+      <div class="container hero__grid">
+        <div class="hero__content">
+          <span class="badge">🍕 Delivery rápido • Atendimento via WhatsApp</span>
+
+          <h1>Peça sua pizza favorita sem complicação</h1>
+
+          <p>
+            Escolha os sabores, monte seu pedido em poucos cliques
+            e finalize rapidamente pelo WhatsApp com atendimento direto.
+          </p>
+
+          <a
+            href="#pedido"
+            class="hero-promo hero-promo--inside"
+            aria-label="Ver promoção de inauguração e ir para o pedido"
+          >
+            <img
+              src="https://www.genspark.ai/api/files/s/OULEh4L2"
+              alt="Promoção de inauguração da Venezza Delivery: na compra de qualquer pizza, ganhe 2 esfihas de brinde"
+            />
+          </a>
+
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#cardapio">Ver cardápio</a>
+            <a class="btn btn--secondary" href="#pedido">Montar pedido</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="container features__grid">
+        <article class="feature-card">
+          <strong>Pedido rápido</strong>
+          <span>Experiência simples para o cliente pedir em poucos segundos.</span>
+        </article>
+
+        <article class="feature-card">
+          <strong>Atendimento direto</strong>
+          <span>O pedido chega pronto no WhatsApp para agilizar a confirmação.</span>
+        </article>
+
+        <article class="feature-card">
+          <strong>Sem checkout complicado</strong>
+          <span>Mais simples de administrar e mais fácil para o cliente finalizar.</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="cardapio">
+      <div class="container">
+        <header class="section__header">
+          <h2 class="section__title">Cardápio</h2>
+          <p class="section__subtitle">
+            Escolha seus sabores favoritos, adicione ao pedido e finalize pelo WhatsApp.
+          </p>
+        </header>
+
+        <div class="catalog">
+          <div class="catalog__content">
+            <div class="filters" id="filters">
+              <button class="filter-btn is-active" data-category="salgadas" type="button">
+                Pizzas Salgadas
+              </button>
+              <button class="filter-btn" data-category="doces" type="button">
+                Pizzas Doces
+              </button>
+            </div>
+
+            <div class="menu-grid" id="menuGrid" aria-live="polite"></div>
+          </div>
+
+          <aside class="order-box" id="pedido">
+            <header class="order-box__header">
+              <div>
+                <h3>Seu pedido</h3>
+                <p>Preencha seus dados, revise os itens e finalize no WhatsApp.</p>
+              </div>
+              <span class="cart-badge">
+                <strong id="cartCount">0</strong> item(ns)
+              </span>
+            </header>
+
+            <form id="orderForm" class="order-form" onsubmit="return false;">
+              <div class="form-group">
+                <label for="customerName">Seu nome</label>
+                <input
+                  class="input"
+                  id="customerName"
+                  type="text"
+                  placeholder="Ex.: Maria"
+                />
+              </div>
+
+              <div class="form-group" id="addressGroup">
+                <label for="customerAddress">Bairro / endereço</label>
+                <input
+                  class="input"
+                  id="customerAddress"
+                  type="text"
+                  placeholder="Ex.: Centro, Rua X, nº 123"
+                />
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="orderType">Tipo do pedido</label>
+                  <select class="select" id="orderType">
+                    <option value="Delivery">Delivery</option>
+                    <option value="Retirada">Retirada</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="paymentMethod">Forma de pagamento</label>
+                  <select class="select" id="paymentMethod">
+                    <option value="Pix">Pix</option>
+                    <option value="Dinheiro">Dinheiro</option>
+                    <option value="Cartão">Cartão</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="cash-change-group hidden" id="cashChangeGroup">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="needChange">Precisa de troco?</label>
+                    <select class="select" id="needChange">
+                      <option value="Não">Não</option>
+                      <option value="Sim">Sim</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group hidden" id="changeAmountGroup">
+                    <label for="changeAmount">Troco para quanto?</label>
+                    <input
+                      class="input"
+                      id="changeAmount"
+                      type="text"
+                      placeholder="Ex.: 100"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="orderNotes">Observações</label>
+                <textarea
+                  class="textarea"
+                  id="orderNotes"
+                  placeholder="Ex.: sem cebola, cortar em 8 pedaços, troco para R$100"
+                ></textarea>
+              </div>
+            </form>
+
+            <div class="cart-items" id="cartItems" aria-live="polite"></div>
+
+            <div class="summary">
+              <div class="summary__row">
+                <span>Subtotal</span>
+                <strong id="orderSubtotal">R$ 0,00</strong>
+              </div>
+
+              <div class="summary__row hidden" id="deliveryFeeRow">
+                <span>Taxa de entrega</span>
+                <strong id="deliveryFeeValue">R$ 0,00</strong>
+              </div>
+
+              <div class="summary__row summary__row--total">
+                <span>Total</span>
+                <strong id="orderTotal">R$ 0,00</strong>
+              </div>
+            </div>
+
+            <div class="order-actions">
+              <button class="btn btn--whatsapp" id="checkoutBtn" type="button">
+                Finalizar no WhatsApp
+              </button>
+              <button class="btn btn--secondary" id="clearCartBtn" type="button">
+                Limpar pedido
+              </button>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="informacoes">
+      <div class="container">
+        <header class="section__header">
+          <h2 class="section__title">Informações</h2>
+          <p class="section__subtitle">
+            Personalize esta área com seus dados reais de atendimento e entrega.
+          </p>
+        </header>
+
+        <div class="info-grid">
+          <article class="info-card">
+            <strong>Horário de atendimento</strong>
+            <p data-business-hours>Segunda a domingo • 18h às 23h</p>
+          </article>
+
+          <article class="info-card">
+            <strong>Região atendida</strong>
+            <p data-delivery-areas>Centro e bairros próximos</p>
+          </article>
+
+          <article class="info-card">
+            <strong>WhatsApp</strong>
+            <p data-whatsapp-display>(11) 99999-9999</p>
+          </article>
+
+          <article class="info-card">
+            <strong>Pedido mínimo</strong>
+            <p data-min-order-label>Sem pedido mínimo</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="mobile-bar">
+    <div class="mobile-bar__content">
+      <span><strong id="mobileCartCount">0</strong> item(ns)</span>
+      <strong id="mobileTotal">R$ 0,00</strong>
     </div>
+    <a href="#pedido" class="btn btn--primary">Revisar pedido</a>
   </div>
 
-  <div class="item">
-    <div>
-      <h3>Mussarela</h3>
-      <p>Mussarela e orégano</p>
+  <a
+    class="floating-whatsapp"
+    id="floatingWhatsApp"
+    href="#"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Abrir WhatsApp"
+    title="Falar no WhatsApp"
+  >
+    ✆
+  </a>
+
+  <div class="toast" id="toast" aria-live="polite" aria-atomic="true"></div>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© <span id="currentYear"></span> <span data-store-name>Venezza Delivery</span> — Cardápio online.</p>
     </div>
-    <div>
-      <span>R$ 40</span>
-      <button onclick="pedir('Mussarela')">Pedir</button>
-    </div>
-  </div>
-
-  <div class="item">
-    <div>
-      <h3>Bacon</h3>
-      <p>Bacon, mussarela e tomate</p>
-    </div>
-    <div>
-      <span>R$ 50</span>
-      <button onclick="pedir('Bacon')">Pedir</button>
-    </div>
-  </div>
-
-</section>
-
-<section class="menu">
-  <h2>PIZZAS DOCES</h2>
-
-  <div class="item">
-    <div>
-      <h3>Banoffe</h3>
-    </div>
-    <div>
-      <span>R$ 60</span>
-      <button onclick="pedir('Banoffe')">Pedir</button>
-    </div>
-  </div>
-
-  <div class="item">
-    <div>
-      <h3>Romeu e Julieta</h3>
-    </div>
-    <div>
-      <span>R$ 40</span>
-      <button onclick="pedir('Romeu e Julieta')">Pedir</button>
-    </div>
-  </div>
-
-</section>
-```
-
-  </div>
-
-  <script src="script.js"></script>
-
+  </footer>
 </body>
 </html>
