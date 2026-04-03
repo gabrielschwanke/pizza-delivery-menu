@@ -3,8 +3,9 @@ document.addEventListener("DOMContentLoaded", () => {
     storeName: "Venezza Delivery",
     slogan: "Sabor que conquista!",
     whatsappNumber: "5553991142090", // coloque aqui o número real com DDI + DDD
-    whatsappDisplay: "(11) 99999-9999",
+    whatsappDisplay: "(53) 99114-2090",
     businessHours: "Segunda a domingo • 18h às 23h",
+    address: "Rua Pereira Passos, 437, Pelotas",
     deliveryAreas: "Centro e bairros próximos",
     deliveryFee: 0, // ex.: 5 para R$ 5,00 | deixe 0 se não quiser cobrar
     minOrder: 0, // ex.: 30 para pedido mínimo de R$ 30,00
@@ -17,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
       nome: "Calabresa",
       descricao: "Mussarela, calabresa e cebola",
       preco: 45,
-      imagem: "./img/pizzas/calabresa.png"
+      imagem: "./img/pizzas/calabresa.png",
     },
     {
       id: "mussarela",
@@ -25,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
       nome: "Mussarela",
       descricao: "Mussarela e orégano",
       preco: 40,
-      imagem: "./img/pizzas/mussarela.jpeg"
+      imagem: "./img/pizzas/mussarela.jpeg",
     },
     {
       id: "coracao",
@@ -33,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
       nome: "Coração",
       descricao: "Coraçãozinho, mussare e aquele molho especial da casa",
       preco: 50,
-      imagem: "./img/pizzas/coracao.jpeg"
+      imagem: "./img/pizzas/coracao.jpeg",
     },
     {
       id: "bacon",
@@ -41,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
       nome: "Bacon",
       descricao: "Bacon, mussarela e tomate",
       preco: 50,
-      imagem: "./img/pizzas/bacon.png"
+      imagem: "./img/pizzas/bacon.png",
     },
     {
       id: "napolitana",
@@ -49,15 +50,16 @@ document.addEventListener("DOMContentLoaded", () => {
       nome: "Napolitana",
       descricao: "Presunto, mussarela, tomate e catupiry",
       preco: 55,
-      imagem: "./img/pizzas/napolitana.png"
+      imagem: "./img/pizzas/napolitana.png",
     },
     {
       id: "strogonoff",
       categoria: "salgadas",
       nome: "Strogonoff de Carne",
-      descricao: "Molho especial da casa, mussarela, frango, creme de leite e batata palha",
+      descricao:
+        "Molho especial da casa, mussarela, frango, creme de leite e batata palha",
       preco: 60,
-      imagem: "./img/pizzas/strogonoff.jpeg"
+      imagem: "./img/pizzas/strogonoff.jpeg",
     },
     {
       id: "frango-catupiry",
@@ -65,7 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
       nome: "Frango com Catupiry",
       descricao: "Frango desfiado com catupiry",
       preco: 50,
-      imagem: "./img/pizzas/frangocatupiry.png"
+      imagem: "./img/pizzas/frangocatupiry.png",
     },
     {
       id: "alho-oleo",
@@ -73,7 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
       nome: "Alho e Óleo",
       descricao: "Alho temperado e toque de orégano",
       preco: 40,
-      imagem: "./img/pizzas/alhoeoleo.jpeg"
+      imagem: "./img/pizzas/alhoeoleo.jpeg",
     },
     {
       id: "pepperoni",
@@ -81,15 +83,16 @@ document.addEventListener("DOMContentLoaded", () => {
       nome: "Pepperoni",
       descricao: "Pepperoni e mussarela",
       preco: 55,
-      imagem: "./img/pizzas/peperone.jpeg"
+      imagem: "./img/pizzas/peperone.jpeg",
     },
     {
       id: "iscas-fritas",
       categoria: "salgadas",
       nome: "Iscas Fritas",
-      descricao: "Iscas com fritas carne de rês, molho especial mussarela e fritas",
+      descricao:
+        "Iscas com fritas carne de rês, molho especial mussarela e fritas",
       preco: 60,
-      imagem: "./img/pizzas/iscas-fritas.jpeg"
+      imagem: "./img/pizzas/iscas-fritas.jpeg",
     },
     {
       id: "lombinho-abacaxi",
@@ -97,7 +100,7 @@ document.addEventListener("DOMContentLoaded", () => {
       nome: "Lombinho com Abacaxi",
       descricao: "Lombinho, mussarela e abacaxi",
       preco: 50,
-      imagem: "./img/pizzas/lombinhoeabacaxi.jpeg"
+      imagem: "./img/pizzas/lombinhoeabacaxi.jpeg",
     },
     {
       id: "quatro-queijos",
@@ -105,7 +108,7 @@ document.addEventListener("DOMContentLoaded", () => {
       nome: "4 Queijos",
       descricao: "Mix especial de queijos",
       preco: 50,
-      imagem: "./img/pizzas/4queijos.png"
+      imagem: "./img/pizzas/4queijos.png",
     },
     {
       id: "bolonhesa",
@@ -113,15 +116,16 @@ document.addEventListener("DOMContentLoaded", () => {
       nome: "Bolonhesa",
       descricao: "Molho bolonhesa e mussarela",
       preco: 50,
-      imagem: "./img/pizzas/bolonhesa.jpeg"
+      imagem: "./img/pizzas/bolonhesa.jpeg",
     },
     {
       id: "vegetariana",
       categoria: "salgadas",
       nome: "Vegetariana",
-      descricao: "Brócolis, champions, ervilha, milho, molho especial e mussarela",
+      descricao:
+        "Brócolis, champions, ervilha, milho, molho especial e mussarela",
       preco: 55,
-      imagem: "./img/pizzas/vegetariana.jpeg"
+      imagem: "./img/pizzas/vegetariana.jpeg",
     },
     {
       id: "sonho-de-valsa",
@@ -129,7 +133,7 @@ document.addEventListener("DOMContentLoaded", () => {
       nome: "Sonho de Valsa",
       descricao: "Chocolate e bombom Sonho de Valsa",
       preco: 50,
-      imagem: "./img/pizzas/sonhodevalsa.jpeg"
+      imagem: "./img/pizzas/sonhodevalsa.jpeg",
     },
     {
       id: "ouro-branco",
@@ -137,15 +141,16 @@ document.addEventListener("DOMContentLoaded", () => {
       nome: "Ouro Branco",
       descricao: "Chocolate e bombom Ouro Branco",
       preco: 50,
-      imagem: "./img/pizzas/ouro-branco.jpeg"
+      imagem: "./img/pizzas/ouro-branco.jpeg",
     },
     {
       id: "banana-nevada",
       categoria: "doces",
       nome: "Banana Nevada",
-      descricao: "Creme de ninho, banana e leite condensado com toque doce da casa",
+      descricao:
+        "Creme de ninho, banana e leite condensado com toque doce da casa",
       preco: 50,
-      imagem: "./img/pizzas/banana-nevada.jpeg"
+      imagem: "./img/pizzas/banana-nevada.jpeg",
     },
     {
       id: "banoffee",
@@ -153,7 +158,7 @@ document.addEventListener("DOMContentLoaded", () => {
       nome: "Banoffee",
       descricao: "Banana, doce e cobertura cremosa",
       preco: 60,
-      imagem: "./img/pizzas/banoffee.jpeg"
+      imagem: "./img/pizzas/banoffee.jpeg",
     },
     {
       id: "romeu-julieta",
@@ -161,15 +166,231 @@ document.addEventListener("DOMContentLoaded", () => {
       nome: "Romeu e Julieta",
       descricao: "Queijo com goiabada",
       preco: 40,
-      imagem: "./img/pizzas/romeu-julieta.png"
+      imagem: "./img/pizzas/romeu-julieta.png",
     },
     {
       id: "california",
       categoria: "doces",
       nome: "Califórnia",
-      descricao: "Pêssego, figo, abacaxi, catupiry e mussarela, combinação doce especial",
+      descricao:
+        "Pêssego, figo, abacaxi, catupiry e mussarela, combinação doce especial",
       preco: 55,
-      imagem: "./img/pizzas/california.jpeg"
+      imagem: "./img/pizzas/california.jpeg",
+    },
+
+    {
+      id: "esfiha-calabresa",
+      categoria: "esfihas-salgadas",
+      nome: "Calabresa",
+      descricao: "Esfiha recheada com calabresa e tempero especial",
+      preco: 8,
+      imagem: "./img/esfihas/calabresa.jpg",
+    },
+    {
+      id: "esfiha-frango-requeijao",
+      categoria: "esfihas-salgadas",
+      nome: "Frango com Requeijão",
+      descricao: "Esfiha recheada com frango desfiado e requeijão",
+      preco: 8,
+      imagem: "./img/esfihas/frango-com-requeijao.jpg",
+    },
+    {
+      id: "esfiha-carne-moida",
+      categoria: "esfihas-salgadas",
+      nome: "Tradicional Carne Moída",
+      descricao: "Esfiha tradicional recheada com carne moída temperada",
+      preco: 8,
+      imagem: "./img/esfihas/carne-moida.jpg",
+    },
+    {
+      id: "esfiha-peperoni",
+      categoria: "esfihas-salgadas",
+      nome: "Peperoni",
+      descricao: "Esfiha recheada com peperoni e toque especial da casa",
+      preco: 8,
+      imagem: "./img/esfihas/peperoni.jpg",
+    },
+    {
+      id: "esfiha-4-queijos",
+      categoria: "esfihas-salgadas",
+      nome: "4 Queijos",
+      descricao: "Esfiha recheada com mix especial de quatro queijos",
+      preco: 8,
+      imagem: "./img/esfihas/4-queijos.jpg",
+    },
+    {
+      id: "esfiha-bacon",
+      categoria: "esfihas-salgadas",
+      nome: "Bacon",
+      descricao: "Esfiha recheada com bacon e queijo",
+      preco: 8,
+      imagem: "./img/esfihas/bacon.jpg",
+    },
+    {
+      id: "esfiha-brocolis-bacon-catupiry",
+      categoria: "esfihas-salgadas",
+      nome: "Brócolis c/ Bacon e Catupiry",
+      descricao: "Esfiha com brócolis, bacon e catupiry",
+      preco: 8,
+      imagem: "./img/esfihas/brocolis-bacon-catupiry.jpg",
+    },
+    {
+      id: "esfiha-presunto-queijo",
+      categoria: "esfihas-salgadas",
+      nome: "Presunto e Queijo",
+      descricao: "Esfiha recheada com presunto e queijo",
+      preco: 8,
+      imagem: "./img/esfihas/presunto-e-queijo.jpg",
+    },
+    {
+      id: "esfiha-doritos-cheddar",
+      categoria: "esfihas-salgadas",
+      nome: "Doritos e Cheddar",
+      descricao: "Esfiha com cheddar cremoso e crocância especial",
+      preco: 8,
+      imagem: "./img/esfihas/doritos-e-cheddar.jpg",
+    },
+    {
+      id: "esfiha-costela",
+      categoria: "esfihas-salgadas",
+      nome: "Costela",
+      descricao: "Esfiha recheada com costela desfiada e temperada",
+      preco: 8,
+      imagem: "./img/esfihas/costela.jpg",
+    },
+    {
+      id: "esfiha-ouro-branco",
+      categoria: "esfihas-doces",
+      nome: "Ouro Branco",
+      descricao: "Esfiha doce com chocolate e bombom Ouro Branco",
+      preco: 8,
+      imagem: "./img/esfihas/ouro-branco.jpg",
+    },
+    {
+      id: "esfiha-sonho-de-valsa",
+      categoria: "esfihas-doces",
+      nome: "Sonho de Valsa",
+      descricao: "Esfiha doce com chocolate e bombom Sonho de Valsa",
+      preco: 8,
+      imagem: "./img/esfihas/sonho-de-valsa.jpg",
+    },
+    {
+      id: "esfiha-pacoca-doce-de-leite",
+      categoria: "esfihas-doces",
+      nome: "Paçoca c/ Doce de Leite",
+      descricao: "Esfiha doce com paçoca e doce de leite",
+      preco: 8,
+      imagem: "./img/esfihas/pacoca-doce-de-leite.jpg",
+    },
+    {
+      id: "esfiha-chocolate-preto",
+      categoria: "esfihas-doces",
+      nome: "Chocolate Preto",
+      descricao: "Esfiha doce com cobertura de chocolate preto",
+      preco: 7,
+      imagem: "./img/esfihas/chocolate-preto.jpg",
+    },
+    {
+      id: "esfiha-chocolate-branco",
+      categoria: "esfihas-doces",
+      nome: "Chocolate Branco",
+      descricao: "Esfiha doce com cobertura de chocolate branco",
+      preco: 7,
+      imagem: "./img/esfihas/chocolate-branco.jpg",
+    },
+    {
+      id: "esfiha-banoffee",
+      categoria: "esfihas-doces",
+      nome: "Banoffe",
+      descricao: "Esfiha doce com banana e cobertura cremosa",
+      preco: 8,
+      imagem: "./img/esfihas/banoffe.jpg",
+    },
+
+    {
+      id: "pastel-salgado",
+      categoria: "pasteis",
+      nome: "Pastel Salgado",
+      descricao: "Escolha o sabor no card antes de adicionar ao pedido.",
+      imagem: "./img/pasteis/pastel-salgado.jpg",
+      rotulo: "Pastel salgado",
+      sabores: [
+        {
+          nome: "Tradicional",
+          descricao: "Carne, ovo e queijo",
+          preco: 15,
+        },
+        {
+          nome: "Aquele Pastel",
+          descricao: "Calabresa, ovo, carne moída e queijo",
+          preco: 17,
+        },
+        {
+          nome: "Frango com Catupiry",
+          descricao: "Frango, mussarela e catupiry",
+          preco: 15,
+        },
+        {
+          nome: "Franbacon",
+          descricao: "Frango, mussarela e bacon",
+          preco: 17,
+        },
+        {
+          nome: "Strogonoff de Frango",
+          descricao: "Frango, mussarela e creme de leite",
+          preco: 17,
+        },
+        {
+          nome: "Calabresa",
+          descricao: "Calabresa e queijo",
+          preco: 15,
+        },
+        {
+          nome: "Presunto e Queijo",
+          descricao: "Presunto e mussarela",
+          preco: 15,
+        },
+        {
+          nome: "4 Queijos",
+          descricao: "Mussarela, catupiry, provolone e cheddar",
+          preco: 17,
+        },
+        {
+          nome: "Pizza",
+          descricao: "Presunto, queijo, tomate e orégano",
+          preco: 15,
+        },
+      ],
+    },
+    {
+      id: "pastel-doce",
+      categoria: "pasteis",
+      nome: "Pastel Doce",
+      descricao: "Escolha o sabor no card antes de adicionar ao pedido.",
+      imagem: "./img/pasteis/pastel-doce.jpg",
+      rotulo: "Pastel doce",
+      sabores: [
+        {
+          nome: "Banana com Doce de Leite",
+          descricao: "Banana com doce de leite",
+          preco: 16,
+        },
+        {
+          nome: "Romeu e Julieta",
+          descricao: "Queijo com goiabada",
+          preco: 15,
+        },
+        {
+          nome: "Chocolate Branco",
+          descricao: "Recheio cremoso de chocolate branco",
+          preco: 16,
+        },
+        {
+          nome: "Chocolate Preto",
+          descricao: "Recheio cremoso de chocolate preto",
+          preco: 16,
+        },
+      ],
     },
   ];
 
@@ -254,6 +475,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.querySelectorAll("[data-business-hours]").forEach((el) => {
       el.textContent = CONFIG.businessHours;
+    });
+
+    document.querySelectorAll("[data-address]").forEach((el) => {
+      el.textContent = CONFIG.address;
     });
 
     document.querySelectorAll("[data-delivery-areas]").forEach((el) => {
@@ -407,41 +632,165 @@ document.addEventListener("DOMContentLoaded", () => {
     return state.cart.reduce((total, item) => total + item.qtd, 0);
   }
 
+  function getCategoryLabel(category) {
+    const labels = {
+      salgadas: "Pizza salgada",
+      doces: "Pizza doce",
+      "esfihas-salgadas": "Esfiha salgada",
+      "esfihas-doces": "Esfiha doce",
+    };
+
+    return labels[category] || "Item do cardápio";
+  }
+
+  function getItemAlt(item) {
+    if (item.categoria === "salgadas" || item.categoria === "doces") {
+      return `Pizza ${item.nome}`;
+    }
+
+    if (
+      item.categoria === "esfihas-salgadas" ||
+      item.categoria === "esfihas-doces"
+    ) {
+      return `Esfiha ${item.nome}`;
+    }
+
+    return item.nome;
+  }
+
+  function slugify(text) {
+    return text
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/(^-|-$)/g, "");
+  }
+
+  function getCategoryLabel(item) {
+    if (item.rotulo) return item.rotulo;
+
+    const labels = {
+      salgadas: "Pizza salgada",
+      doces: "Pizza doce",
+      "esfihas-salgadas": "Esfiha salgada",
+      "esfihas-doces": "Esfiha doce",
+      pasteis: "Pastel",
+    };
+
+    return labels[item.categoria] || "Item do cardápio";
+  }
+
+  function getItemAlt(item) {
+    if (item.categoria === "pasteis") {
+      return item.nome;
+    }
+
+    if (item.categoria === "salgadas" || item.categoria === "doces") {
+      return `Pizza ${item.nome}`;
+    }
+
+    if (
+      item.categoria === "esfihas-salgadas" ||
+      item.categoria === "esfihas-doces"
+    ) {
+      return `Esfiha ${item.nome}`;
+    }
+
+    return item.nome;
+  }
+
+  function getItemPriceLabel(item) {
+    if (item.categoria === "pasteis") {
+      return "";
+    }
+
+    if (!item.sabores || item.sabores.length === 0) {
+      return formatPrice(item.preco);
+    }
+
+    const prices = item.sabores.map((sabor) => sabor.preco);
+    const minPrice = Math.min(...prices);
+    const maxPrice = Math.max(...prices);
+
+    if (minPrice === maxPrice) {
+      return formatPrice(minPrice);
+    }
+
+    return `${formatPrice(minPrice)} a ${formatPrice(maxPrice)}`;
+  }
+
+  function getFlavorByName(product, flavorName) {
+    if (!product.sabores) return null;
+    return product.sabores.find((sabor) => sabor.nome === flavorName) || null;
+  }
+
   function renderMenu() {
     const filteredItems = MENU.filter(
       (item) => item.categoria === state.currentCategory,
     );
 
     elements.menuGrid.innerHTML = filteredItems
-      .map(
-        (item) => `
-      <article class="menu-card">
-        <img
-          src="${item.imagem}"
-          alt="Pizza ${item.nome}"
-          class="menu-card__image"
-          loading="lazy"
-        />
+      .map((item) => {
+        const hasFlavors =
+          Array.isArray(item.sabores) && item.sabores.length > 0;
 
-        <span class="menu-card__tag">
-          ${item.categoria === "salgadas" ? "Pizza salgada" : "Pizza doce"}
-        </span>
+        return `
+          <article class="menu-card">
+            <img
+              src="${item.imagem}"
+              alt="${getItemAlt(item)}"
+              class="menu-card__image"
+              loading="lazy"
+            />
 
-        <div class="menu-card__top">
-          <div>
-            <h3>${item.nome}</h3>
-            <p>${item.descricao}</p>
-          </div>
+            <span class="menu-card__tag">
+              ${getCategoryLabel(item)}
+            </span>
 
-          <span class="price">${formatPrice(item.preco)}</span>
-        </div>
+            <div class="menu-card__top">
+              <div>
+                <h3>${item.nome}</h3>
+                <p>${item.descricao}</p>
+              </div>
 
-        <button class="btn btn--primary add-btn" data-id="${item.id}" type="button">
-          Adicionar ao pedido
-        </button>
-      </article>
-    `,
-      )
+              ${getItemPriceLabel(item) ? `<span class="price">${getItemPriceLabel(item)}</span>` : ""}
+
+            </div>
+
+            ${
+              hasFlavors
+                ? `
+                  <div class="menu-card__variant">
+                    <label class="menu-card__variant-label" for="flavor-${item.id}">
+                      Escolha o sabor
+                    </label>
+                    <select
+                      class="select product-flavor"
+                      id="flavor-${item.id}"
+                      data-product-id="${item.id}"
+                    >
+                      ${item.sabores
+                        .map(
+                          (sabor) => `
+                            <option value="${sabor.nome}">
+                              ${sabor.nome} — ${formatPrice(sabor.preco)}
+                            </option>
+                          `,
+                        )
+                        .join("")}
+                    </select>
+                  </div>
+                `
+                : ""
+            }
+
+            <button class="btn btn--primary add-btn" data-id="${item.id}" type="button">
+              Adicionar ao pedido
+            </button>
+          </article>
+        `;
+      })
       .join("");
   }
 
@@ -449,7 +798,8 @@ document.addEventListener("DOMContentLoaded", () => {
     if (state.cart.length === 0) {
       elements.cartItems.innerHTML = `
         <div class="cart-empty">
-          Seu pedido está vazio. Adicione um sabor para começar.
+          Seu pedido está vazio. Adicione um item para começar.
+
         </div>
       `;
     } else {
@@ -527,7 +877,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const addButton = event.target.closest(".add-btn");
     if (!addButton) return;
 
-    addToCart(addButton.dataset.id);
+    const card = addButton.closest(".menu-card");
+    const flavorSelect = card?.querySelector(".product-flavor");
+    const selectedFlavor = flavorSelect ? flavorSelect.value : null;
+
+    addToCart(addButton.dataset.id, selectedFlavor);
   }
 
   function handleCartActions(event) {
@@ -550,25 +904,42 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  function addToCart(productId) {
+  function addToCart(productId, selectedFlavorName = null) {
     const product = getProductById(productId);
     if (!product) return;
 
-    const existingItem = state.cart.find((item) => item.id === productId);
+    let cartId = product.id;
+    let cartName = product.nome;
+    let cartPrice = product.preco;
+
+    if (Array.isArray(product.sabores) && product.sabores.length > 0) {
+      const selectedFlavor = getFlavorByName(
+        product,
+        selectedFlavorName || product.sabores[0].nome,
+      );
+
+      if (!selectedFlavor) return;
+
+      cartId = `${product.id}-${slugify(selectedFlavor.nome)}`;
+      cartName = `${product.nome} - ${selectedFlavor.nome}`;
+      cartPrice = selectedFlavor.preco;
+    }
+
+    const existingItem = state.cart.find((item) => item.id === cartId);
 
     if (existingItem) {
       existingItem.qtd += 1;
     } else {
       state.cart.push({
-        id: product.id,
-        nome: product.nome,
-        preco: product.preco,
+        id: cartId,
+        nome: cartName,
+        preco: cartPrice,
         qtd: 1,
       });
     }
 
     renderCart();
-    showToast(`${product.nome} adicionado ao pedido`);
+    showToast(`${cartName} adicionado ao pedido`);
   }
 
   function increaseItem(productId) {
