@@ -1,31 +1,28 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Venezza Delivery | Cardápio Online</title>
-  <meta
-    name="description"
-    content="Cardápio online da Venezza Delivery. Monte seu pedido e finalize rapidamente pelo WhatsApp."
-  />
+  <meta name="description" content="Cardápio online da Venezza Delivery. Monte seu pedido e finalize rapidamente pelo WhatsApp." />
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon.png" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="style.css" />
   <script src="script.js" defer></script>
 </head>
+
 <body>
   <header class="topbar">
     <div class="container topbar__inner">
       <a href="#topo" class="brand" aria-label="Ir para o topo">
-        <span class="brand__title" data-store-name>Venezza Delivery</span>
-        <span class="brand__subtitle" data-store-slogan>Sabor que conquista!</span>
+        <img src="./img/logopizza.png" alt="Logo da Venezza Delivery" class="brand__logo" />
       </a>
 
       <nav class="nav" aria-label="Menu principal">
@@ -45,21 +42,8 @@
           <span class="badge">🍕 Delivery rápido • Atendimento via WhatsApp</span>
 
           <h1>Peça sua pizza favorita sem complicação</h1>
-
-          <p>
-            Escolha os sabores, monte seu pedido em poucos cliques
-            e finalize rapidamente pelo WhatsApp com atendimento direto.
-          </p>
-
-          <a
-            href="#pedido"
-            class="hero-promo hero-promo--inside"
-            aria-label="Ver promoção de inauguração e ir para o pedido"
-          >
-            <img
-              src="https://www.genspark.ai/api/files/s/OULEh4L2"
-              alt="Promoção de inauguração da Venezza Delivery: na compra de qualquer pizza, ganhe 2 esfihas de brinde"
-            />
+          <a href="#pedido" class="hero-promo hero-promo--inside" aria-label="Ver promoção de inauguração e ir para o pedido">
+            <img src="./img/bannerpromo2.png" alt="Promoção de inauguração da Venezza Delivery: na compra de qualquer pizza, ganhe 2 esfihas de brinde" />
           </a>
 
           <div class="hero__actions">
@@ -126,22 +110,12 @@
             <form id="orderForm" class="order-form" onsubmit="return false;">
               <div class="form-group">
                 <label for="customerName">Seu nome</label>
-                <input
-                  class="input"
-                  id="customerName"
-                  type="text"
-                  placeholder="Ex.: Maria"
-                />
+                <input class="input" id="customerName" type="text" placeholder="Ex.: Maria" />
               </div>
 
               <div class="form-group" id="addressGroup">
                 <label for="customerAddress">Bairro / endereço</label>
-                <input
-                  class="input"
-                  id="customerAddress"
-                  type="text"
-                  placeholder="Ex.: Centro, Rua X, nº 123"
-                />
+                <input class="input" id="customerAddress" type="text" placeholder="Ex.: Centro, Rua X, nº 123" />
               </div>
 
               <div class="form-row">
@@ -175,23 +149,14 @@
 
                   <div class="form-group hidden" id="changeAmountGroup">
                     <label for="changeAmount">Troco para quanto?</label>
-                    <input
-                      class="input"
-                      id="changeAmount"
-                      type="text"
-                      placeholder="Ex.: 100"
-                    />
+                    <input class="input" id="changeAmount" type="text" placeholder="Ex.: 100" />
                   </div>
                 </div>
               </div>
 
               <div class="form-group">
                 <label for="orderNotes">Observações</label>
-                <textarea
-                  class="textarea"
-                  id="orderNotes"
-                  placeholder="Ex.: sem cebola, cortar em 8 pedaços, troco para R$100"
-                ></textarea>
+                <textarea class="textarea" id="orderNotes" placeholder="Ex.: sem cebola, cortar em 8 pedaços, troco para R$100"></textarea>
               </div>
             </form>
 
@@ -269,15 +234,7 @@
     <a href="#pedido" class="btn btn--primary">Revisar pedido</a>
   </div>
 
-  <a
-    class="floating-whatsapp"
-    id="floatingWhatsApp"
-    href="#"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="Abrir WhatsApp"
-    title="Falar no WhatsApp"
-  >
+  <a class="floating-whatsapp" id="floatingWhatsApp" href="#" target="_blank" rel="noopener noreferrer" aria-label="Abrir WhatsApp" title="Falar no WhatsApp">
     ✆
   </a>
 
@@ -289,4 +246,5 @@
     </div>
   </footer>
 </body>
+
 </html>

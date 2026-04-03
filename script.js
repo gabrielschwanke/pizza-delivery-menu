@@ -2,12 +2,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const CONFIG = {
     storeName: "Venezza Delivery",
     slogan: "Sabor que conquista!",
-    whatsappNumber: "5511999999999", // coloque aqui o número real com DDI + DDD
+    whatsappNumber: "5553991142090", // coloque aqui o número real com DDI + DDD
     whatsappDisplay: "(11) 99999-9999",
     businessHours: "Segunda a domingo • 18h às 23h",
     deliveryAreas: "Centro e bairros próximos",
     deliveryFee: 0, // ex.: 5 para R$ 5,00 | deixe 0 se não quiser cobrar
-    minOrder: 0 // ex.: 30 para pedido mínimo de R$ 30,00
+    minOrder: 0, // ex.: 30 para pedido mínimo de R$ 30,00
   };
 
   const MENU = [
@@ -16,141 +16,161 @@ document.addEventListener("DOMContentLoaded", () => {
       categoria: "salgadas",
       nome: "Calabresa",
       descricao: "Mussarela, calabresa e cebola",
-      preco: 45
+      preco: 45,
+      imagem: "./img/pizzas/calabresa.png"
     },
     {
       id: "mussarela",
       categoria: "salgadas",
       nome: "Mussarela",
       descricao: "Mussarela e orégano",
-      preco: 40
+      preco: 40,
+      imagem: "./img/pizzas/mussarela.jpeg"
     },
     {
       id: "coracao",
       categoria: "salgadas",
       nome: "Coração",
-      descricao: "Coração de frango e mussarela",
-      preco: 50
+      descricao: "Coraçãozinho, mussare e aquele molho especial da casa",
+      preco: 50,
+      imagem: "./img/pizzas/coracao.jpeg"
     },
     {
       id: "bacon",
       categoria: "salgadas",
       nome: "Bacon",
       descricao: "Bacon, mussarela e tomate",
-      preco: 50
+      preco: 50,
+      imagem: "./img/pizzas/bacon.png"
     },
     {
       id: "napolitana",
       categoria: "salgadas",
       nome: "Napolitana",
       descricao: "Presunto, mussarela, tomate e catupiry",
-      preco: 55
+      preco: 55,
+      imagem: "./img/pizzas/napolitana.png"
     },
     {
       id: "strogonoff",
       categoria: "salgadas",
       nome: "Strogonoff de Carne",
-      descricao: "Creme de leite, molho, champignon e batata palha",
-      preco: 60
+      descricao: "Molho especial da casa, mussarela, frango, creme de leite e batata palha",
+      preco: 60,
+      imagem: "./img/pizzas/strogonoff.jpeg"
     },
     {
       id: "frango-catupiry",
       categoria: "salgadas",
       nome: "Frango com Catupiry",
       descricao: "Frango desfiado com catupiry",
-      preco: 50
+      preco: 50,
+      imagem: "./img/pizzas/frangocatupiry.png"
     },
     {
       id: "alho-oleo",
       categoria: "salgadas",
       nome: "Alho e Óleo",
       descricao: "Alho temperado e toque de orégano",
-      preco: 40
+      preco: 40,
+      imagem: "./img/pizzas/alhoeoleo.jpeg"
     },
     {
       id: "pepperoni",
       categoria: "salgadas",
       nome: "Pepperoni",
       descricao: "Pepperoni e mussarela",
-      preco: 55
+      preco: 55,
+      imagem: "./img/pizzas/peperone.jpeg"
     },
     {
       id: "iscas-fritas",
       categoria: "salgadas",
       nome: "Iscas Fritas",
-      descricao: "Cobertura especial da casa",
-      preco: 60
+      descricao: "Iscas com fritas carne de rês, molho especial mussarela e fritas",
+      preco: 60,
+      imagem: "./img/pizzas/iscas-fritas.jpeg"
     },
     {
       id: "lombinho-abacaxi",
       categoria: "salgadas",
       nome: "Lombinho com Abacaxi",
       descricao: "Lombinho, mussarela e abacaxi",
-      preco: 50
+      preco: 50,
+      imagem: "./img/pizzas/lombinhoeabacaxi.jpeg"
     },
     {
       id: "quatro-queijos",
       categoria: "salgadas",
       nome: "4 Queijos",
       descricao: "Mix especial de queijos",
-      preco: 50
+      preco: 50,
+      imagem: "./img/pizzas/4queijos.png"
     },
     {
       id: "bolonhesa",
       categoria: "salgadas",
       nome: "Bolonhesa",
       descricao: "Molho bolonhesa e mussarela",
-      preco: 50
+      preco: 50,
+      imagem: "./img/pizzas/bolonhesa.jpeg"
     },
     {
       id: "vegetariana",
       categoria: "salgadas",
       nome: "Vegetariana",
-      descricao: "Legumes selecionados e mussarela",
-      preco: 55
+      descricao: "Brócolis, champions, ervilha, milho, molho especial e mussarela",
+      preco: 55,
+      imagem: "./img/pizzas/vegetariana.jpeg"
     },
     {
       id: "sonho-de-valsa",
       categoria: "doces",
       nome: "Sonho de Valsa",
-      descricao: "Chocolate com cobertura especial",
-      preco: 50
+      descricao: "Chocolate e bombom Sonho de Valsa",
+      preco: 50,
+      imagem: "./img/pizzas/sonhodevalsa.jpeg"
     },
     {
       id: "ouro-branco",
       categoria: "doces",
       nome: "Ouro Branco",
       descricao: "Chocolate e bombom Ouro Branco",
-      preco: 50
+      preco: 50,
+      imagem: "./img/pizzas/ouro-branco.jpeg"
     },
     {
       id: "banana-nevada",
       categoria: "doces",
       nome: "Banana Nevada",
-      descricao: "Banana com toque doce da casa",
-      preco: 50
+      descricao: "Creme de ninho, banana e leite condensado com toque doce da casa",
+      preco: 50,
+      imagem: "./img/pizzas/banana-nevada.jpeg"
     },
     {
       id: "banoffee",
       categoria: "doces",
       nome: "Banoffee",
       descricao: "Banana, doce e cobertura cremosa",
-      preco: 60
+      preco: 60,
+      imagem: "./img/pizzas/banoffee.jpeg"
     },
     {
       id: "romeu-julieta",
       categoria: "doces",
       nome: "Romeu e Julieta",
       descricao: "Queijo com goiabada",
-      preco: 40
+      preco: 40,
+      imagem: "./img/pizzas/romeu-julieta.png"
     },
     {
       id: "california",
       categoria: "doces",
       nome: "Califórnia",
-      descricao: "Combinação doce especial",
-      preco: 55
-    }
+      descricao: "Pêssego, figo, abacaxi, catupiry e mussarela, combinação doce especial",
+      preco: 55,
+      imagem: "./img/pizzas/california.jpeg"
+    },
   ];
 
   const STORAGE_KEYS = {
@@ -161,13 +181,13 @@ document.addEventListener("DOMContentLoaded", () => {
     payment: "venezza-payment",
     needChange: "venezza-need-change",
     changeAmount: "venezza-change-amount",
-    notes: "venezza-notes"
+    notes: "venezza-notes",
   };
 
   const state = {
     currentCategory: "salgadas",
     cart: getStoredCart(),
-    toastTimer: null
+    toastTimer: null,
   };
 
   const elements = {
@@ -195,7 +215,7 @@ document.addEventListener("DOMContentLoaded", () => {
     floatingWhatsApp: document.getElementById("floatingWhatsApp"),
     addressGroup: document.getElementById("addressGroup"),
     toast: document.getElementById("toast"),
-    currentYear: document.getElementById("currentYear")
+    currentYear: document.getElementById("currentYear"),
   };
 
   init();
@@ -214,7 +234,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function getStoredCart() {
     try {
-      const stored = JSON.parse(localStorage.getItem(STORAGE_KEYS.cart) || "[]");
+      const stored = JSON.parse(
+        localStorage.getItem(STORAGE_KEYS.cart) || "[]",
+      );
       return Array.isArray(stored) ? stored : [];
     } catch {
       return [];
@@ -265,14 +287,16 @@ document.addEventListener("DOMContentLoaded", () => {
       elements.customerName,
       elements.customerAddress,
       elements.orderNotes,
-      elements.changeAmount
+      elements.changeAmount,
     ].forEach((field) => {
       field.addEventListener("input", persistForm);
     });
 
-    [elements.orderType, elements.paymentMethod, elements.needChange].forEach((field) => {
-      field.addEventListener("change", persistForm);
-    });
+    [elements.orderType, elements.paymentMethod, elements.needChange].forEach(
+      (field) => {
+        field.addEventListener("change", persistForm);
+      },
+    );
 
     elements.orderType.addEventListener("change", () => {
       toggleAddressField();
@@ -290,11 +314,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function hydrateForm() {
     elements.customerName.value = localStorage.getItem(STORAGE_KEYS.name) || "";
-    elements.customerAddress.value = localStorage.getItem(STORAGE_KEYS.address) || "";
-    elements.orderType.value = localStorage.getItem(STORAGE_KEYS.orderType) || "Delivery";
-    elements.paymentMethod.value = localStorage.getItem(STORAGE_KEYS.payment) || "Pix";
-    elements.needChange.value = localStorage.getItem(STORAGE_KEYS.needChange) || "Não";
-    elements.changeAmount.value = localStorage.getItem(STORAGE_KEYS.changeAmount) || "";
+    elements.customerAddress.value =
+      localStorage.getItem(STORAGE_KEYS.address) || "";
+    elements.orderType.value =
+      localStorage.getItem(STORAGE_KEYS.orderType) || "Delivery";
+    elements.paymentMethod.value =
+      localStorage.getItem(STORAGE_KEYS.payment) || "Pix";
+    elements.needChange.value =
+      localStorage.getItem(STORAGE_KEYS.needChange) || "Não";
+    elements.changeAmount.value =
+      localStorage.getItem(STORAGE_KEYS.changeAmount) || "";
     elements.orderNotes.value = localStorage.getItem(STORAGE_KEYS.notes) || "";
   }
 
@@ -304,7 +333,10 @@ document.addEventListener("DOMContentLoaded", () => {
     localStorage.setItem(STORAGE_KEYS.orderType, elements.orderType.value);
     localStorage.setItem(STORAGE_KEYS.payment, elements.paymentMethod.value);
     localStorage.setItem(STORAGE_KEYS.needChange, elements.needChange.value);
-    localStorage.setItem(STORAGE_KEYS.changeAmount, elements.changeAmount.value);
+    localStorage.setItem(
+      STORAGE_KEYS.changeAmount,
+      elements.changeAmount.value,
+    );
     localStorage.setItem(STORAGE_KEYS.notes, elements.orderNotes.value);
   }
 
@@ -331,7 +363,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const needsChange = elements.needChange.value === "Sim";
 
     elements.cashChangeGroup.classList.toggle("hidden", !isCash);
-    elements.changeAmountGroup.classList.toggle("hidden", !isCash || !needsChange);
+    elements.changeAmountGroup.classList.toggle(
+      "hidden",
+      !isCash || !needsChange,
+    );
 
     if (!isCash) {
       elements.needChange.value = "Não";
@@ -348,7 +383,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function formatPrice(value) {
     return value.toLocaleString("pt-BR", {
       style: "currency",
-      currency: "BRL"
+      currency: "BRL",
     });
   }
 
@@ -374,31 +409,38 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function renderMenu() {
     const filteredItems = MENU.filter(
-      (item) => item.categoria === state.currentCategory
+      (item) => item.categoria === state.currentCategory,
     );
 
     elements.menuGrid.innerHTML = filteredItems
       .map(
         (item) => `
-          <article class="menu-card">
-            <span class="menu-card__tag">
-              ${item.categoria === "salgadas" ? "Pizza salgada" : "Pizza doce"}
-            </span>
+      <article class="menu-card">
+        <img
+          src="${item.imagem}"
+          alt="Pizza ${item.nome}"
+          class="menu-card__image"
+          loading="lazy"
+        />
 
-            <div class="menu-card__top">
-              <div>
-                <h3>${item.nome}</h3>
-                <p>${item.descricao}</p>
-              </div>
+        <span class="menu-card__tag">
+          ${item.categoria === "salgadas" ? "Pizza salgada" : "Pizza doce"}
+        </span>
 
-              <span class="price">${formatPrice(item.preco)}</span>
-            </div>
+        <div class="menu-card__top">
+          <div>
+            <h3>${item.nome}</h3>
+            <p>${item.descricao}</p>
+          </div>
 
-            <button class="btn btn--primary add-btn" data-id="${item.id}" type="button">
-              Adicionar ao pedido
-            </button>
-          </article>
-        `
+          <span class="price">${formatPrice(item.preco)}</span>
+        </div>
+
+        <button class="btn btn--primary add-btn" data-id="${item.id}" type="button">
+          Adicionar ao pedido
+        </button>
+      </article>
+    `,
       )
       .join("");
   }
@@ -439,7 +481,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 </button>
               </div>
             </div>
-          `
+          `,
         )
         .join("");
     }
@@ -521,7 +563,7 @@ document.addEventListener("DOMContentLoaded", () => {
         id: product.id,
         nome: product.nome,
         preco: product.preco,
-        qtd: 1
+        qtd: 1,
       });
     }
 
@@ -625,7 +667,9 @@ document.addEventListener("DOMContentLoaded", () => {
     lines.push("");
 
     state.cart.forEach((item) => {
-      lines.push(`• ${item.qtd}x ${item.nome} — ${formatPrice(item.preco * item.qtd)}`);
+      lines.push(
+        `• ${item.qtd}x ${item.nome} — ${formatPrice(item.preco * item.qtd)}`,
+      );
     });
 
     lines.push("");
