@@ -92,7 +92,7 @@ document.addEventListener("DOMContentLoaded", () => {
       descricao:
         "Iscas com fritas carne de rês, molho especial mussarela e fritas",
       preco: 60,
-      imagem: "./img/pizzas/iscas-fritas.jpeg",
+      imagem: "./img/pizzas/pizzafritas.png",
     },
     {
       id: "lombinho-abacaxi",
@@ -166,7 +166,7 @@ document.addEventListener("DOMContentLoaded", () => {
       nome: "Romeu e Julieta",
       descricao: "Queijo com goiabada",
       preco: 40,
-      imagem: "./img/pizzas/romeu-julieta.png",
+      imagem: "./img/pizzas/romeuejulieta.png",
     },
     {
       id: "california",
@@ -184,7 +184,7 @@ document.addEventListener("DOMContentLoaded", () => {
       nome: "Calabresa",
       descricao: "Esfiha recheada com calabresa e tempero especial",
       preco: 8,
-      imagem: "./img/esfihas/calabresa.jpg",
+      imagem: "./img/esfihas/esfihacalabresa.png",
     },
     {
       id: "esfiha-frango-requeijao",
@@ -192,7 +192,7 @@ document.addEventListener("DOMContentLoaded", () => {
       nome: "Frango com Requeijão",
       descricao: "Esfiha recheada com frango desfiado e requeijão",
       preco: 8,
-      imagem: "./img/esfihas/frango-com-requeijao.jpg",
+      imagem: "./img/esfihas/frangorequeijao.png",
     },
     {
       id: "esfiha-carne-moida",
@@ -200,7 +200,7 @@ document.addEventListener("DOMContentLoaded", () => {
       nome: "Tradicional Carne Moída",
       descricao: "Esfiha tradicional recheada com carne moída temperada",
       preco: 8,
-      imagem: "./img/esfihas/carne-moida.jpg",
+      imagem: "./img/esfihas/esfihacarne.png",
     },
     {
       id: "esfiha-peperoni",
@@ -208,7 +208,7 @@ document.addEventListener("DOMContentLoaded", () => {
       nome: "Peperoni",
       descricao: "Esfiha recheada com peperoni e toque especial da casa",
       preco: 8,
-      imagem: "./img/esfihas/peperoni.jpg",
+      imagem: "./img/esfihas/esfihapeperone.png",
     },
     {
       id: "esfiha-4-queijos",
@@ -216,7 +216,7 @@ document.addEventListener("DOMContentLoaded", () => {
       nome: "4 Queijos",
       descricao: "Esfiha recheada com mix especial de quatro queijos",
       preco: 8,
-      imagem: "./img/esfihas/4-queijos.jpg",
+      imagem: "./img/esfihas/esfiha4queijos.png",
     },
     {
       id: "esfiha-bacon",
@@ -224,7 +224,7 @@ document.addEventListener("DOMContentLoaded", () => {
       nome: "Bacon",
       descricao: "Esfiha recheada com bacon e queijo",
       preco: 8,
-      imagem: "./img/esfihas/bacon.jpg",
+      imagem: "./img/esfihas/esfihabacon.png",
     },
     {
       id: "esfiha-brocolis-bacon-catupiry",
@@ -232,7 +232,7 @@ document.addEventListener("DOMContentLoaded", () => {
       nome: "Brócolis c/ Bacon e Catupiry",
       descricao: "Esfiha com brócolis, bacon e catupiry",
       preco: 8,
-      imagem: "./img/esfihas/brocolis-bacon-catupiry.jpg",
+      imagem: "./img/esfihas/esfihabrocolis.png",
     },
     {
       id: "esfiha-presunto-queijo",
@@ -240,7 +240,7 @@ document.addEventListener("DOMContentLoaded", () => {
       nome: "Presunto e Queijo",
       descricao: "Esfiha recheada com presunto e queijo",
       preco: 8,
-      imagem: "./img/esfihas/presunto-e-queijo.jpg",
+      imagem: "./img/esfihas/esfihapresunto.png",
     },
     {
       id: "esfiha-doritos-cheddar",
@@ -248,7 +248,7 @@ document.addEventListener("DOMContentLoaded", () => {
       nome: "Doritos e Cheddar",
       descricao: "Esfiha com cheddar cremoso e crocância especial",
       preco: 8,
-      imagem: "./img/esfihas/doritos-e-cheddar.jpg",
+      imagem: "./img/esfihas/esfihadoritos.png",
     },
     {
       id: "esfiha-costela",
@@ -256,7 +256,7 @@ document.addEventListener("DOMContentLoaded", () => {
       nome: "Costela",
       descricao: "Esfiha recheada com costela desfiada e temperada",
       preco: 8,
-      imagem: "./img/esfihas/costela.jpg",
+      imagem: "./img/esfihas/esfihacostela.png",
     },
     {
       id: "esfiha-ouro-branco",
@@ -264,7 +264,7 @@ document.addEventListener("DOMContentLoaded", () => {
       nome: "Ouro Branco",
       descricao: "Esfiha doce com chocolate e bombom Ouro Branco",
       preco: 8,
-      imagem: "./img/esfihas/ouro-branco.jpg",
+      imagem: "./img/esfihas/esfihaourobranco.png",
     },
     {
       id: "esfiha-sonho-de-valsa",
@@ -272,7 +272,7 @@ document.addEventListener("DOMContentLoaded", () => {
       nome: "Sonho de Valsa",
       descricao: "Esfiha doce com chocolate e bombom Sonho de Valsa",
       preco: 8,
-      imagem: "./img/esfihas/sonho-de-valsa.jpg",
+      imagem: "./img/esfihas/esfihasonho.png",
     },
     {
       id: "esfiha-pacoca-doce-de-leite",
@@ -280,7 +280,7 @@ document.addEventListener("DOMContentLoaded", () => {
       nome: "Paçoca c/ Doce de Leite",
       descricao: "Esfiha doce com paçoca e doce de leite",
       preco: 8,
-      imagem: "./img/esfihas/pacoca-doce-de-leite.jpg",
+      imagem: "./img/esfihas/pacoca.png",
     },
     {
       id: "esfiha-chocolate-preto",
@@ -288,7 +288,7 @@ document.addEventListener("DOMContentLoaded", () => {
       nome: "Chocolate Preto",
       descricao: "Esfiha doce com cobertura de chocolate preto",
       preco: 7,
-      imagem: "./img/esfihas/chocolate-preto.jpg",
+      imagem: "./img/esfihas/chocolatepreto.png",
     },
     {
       id: "esfiha-chocolate-branco",
@@ -296,7 +296,7 @@ document.addEventListener("DOMContentLoaded", () => {
       nome: "Chocolate Branco",
       descricao: "Esfiha doce com cobertura de chocolate branco",
       preco: 7,
-      imagem: "./img/esfihas/chocolate-branco.jpg",
+      imagem: "./img/esfihas/esfihachocolatebranco.png",
     },
     {
       id: "esfiha-banoffee",
@@ -304,7 +304,7 @@ document.addEventListener("DOMContentLoaded", () => {
       nome: "Banoffe",
       descricao: "Esfiha doce com banana e cobertura cremosa",
       preco: 8,
-      imagem: "./img/esfihas/banoffe.jpg",
+      imagem: "./img/esfihas/esfihabanoffe.png",
     },
 
     {
@@ -312,7 +312,7 @@ document.addEventListener("DOMContentLoaded", () => {
       categoria: "pasteis",
       nome: "Pastel Salgado",
       descricao: "Escolha o sabor no card antes de adicionar ao pedido.",
-      imagem: "./img/pasteis/pastel-salgado.jpg",
+      imagem: "./img/pastel/pastel2.png",
       rotulo: "Pastel salgado",
       sabores: [
         {
@@ -367,7 +367,7 @@ document.addEventListener("DOMContentLoaded", () => {
       categoria: "pasteis",
       nome: "Pastel Doce",
       descricao: "Escolha o sabor no card antes de adicionar ao pedido.",
-      imagem: "./img/pasteis/pastel-doce.jpg",
+      imagem: "./img/pastel/pastel2.png",
       rotulo: "Pastel doce",
       sabores: [
         {
@@ -504,6 +504,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function bindEvents() {
     elements.filters.addEventListener("click", handleCategoryChange);
     elements.menuGrid.addEventListener("click", handleAddToCart);
+    elements.menuGrid.addEventListener("change", handleFlavorChange);
     elements.cartItems.addEventListener("click", handleCartActions);
     elements.checkoutBtn.addEventListener("click", sendToWhatsApp);
     elements.clearCartBtn.addEventListener("click", clearCart);
@@ -761,27 +762,32 @@ document.addEventListener("DOMContentLoaded", () => {
             ${
               hasFlavors
                 ? `
-                  <div class="menu-card__variant">
-                    <label class="menu-card__variant-label" for="flavor-${item.id}">
-                      Escolha o sabor
-                    </label>
-                    <select
-                      class="select product-flavor"
-                      id="flavor-${item.id}"
-                      data-product-id="${item.id}"
-                    >
-                      ${item.sabores
-                        .map(
-                          (sabor) => `
-                            <option value="${sabor.nome}">
-                              ${sabor.nome} — ${formatPrice(sabor.preco)}
-                            </option>
-                          `,
-                        )
-                        .join("")}
-                    </select>
-                  </div>
-                `
+      <div class="menu-card__variant">
+        <label class="menu-card__variant-label" for="flavor-${item.id}">
+          Escolha o sabor
+        </label>
+
+        <select
+          class="select product-flavor"
+          id="flavor-${item.id}"
+          data-product-id="${item.id}"
+        >
+          ${item.sabores
+            .map(
+              (sabor) => `
+                <option value="${sabor.nome}">
+                  ${sabor.nome}
+                </option>
+              `,
+            )
+            .join("")}
+        </select>
+
+        <div class="menu-card__flavor-price" id="flavor-price-${item.id}">
+          ${formatPrice(item.sabores[0].preco)}
+        </div>
+      </div>
+    `
                 : ""
             }
 
@@ -872,6 +878,23 @@ document.addEventListener("DOMContentLoaded", () => {
     button.classList.add("is-active");
     renderMenu();
   }
+
+  function handleFlavorChange(event) {
+  const select = event.target.closest(".product-flavor");
+  if (!select) return;
+
+  const product = getProductById(select.dataset.productId);
+  if (!product || !product.sabores) return;
+
+  const selectedFlavor = getFlavorByName(product, select.value);
+  if (!selectedFlavor) return;
+
+  const priceElement = document.getElementById(`flavor-price-${product.id}`);
+  if (priceElement) {
+    priceElement.textContent = formatPrice(selectedFlavor.preco);
+  }
+}
+
 
   function handleAddToCart(event) {
     const addButton = event.target.closest(".add-btn");

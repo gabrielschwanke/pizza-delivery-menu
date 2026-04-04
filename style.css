@@ -398,6 +398,7 @@ button {
   flex-direction: column;
   gap: 12px;
   padding: 18px;
+  overflow: hidden;
   border-radius: var(--radius-md);
   border: 1px solid var(--line);
   background: linear-gradient(180deg, var(--surface), var(--surface-2));
@@ -793,6 +794,7 @@ button {
 .menu-card__variant {
   display: grid;
   gap: 8px;
+  min-width: 0;
 }
 
 .menu-card__variant-label {
@@ -802,7 +804,15 @@ button {
 }
 
 .menu-card .select {
-  min-height: 48px;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+
+.menu-card__flavor-price {
+  color: var(--gold-light);
+  font-size: 0.95rem;
+  font-weight: 800;
 }
 
 /* Responsive */
@@ -931,5 +941,19 @@ button {
 
   .menu-card__image {
     height: 200px;
+  }
+
+  .menu-card .select {
+    padding: 12px 40px 12px 12px;
+    font-size: 0.95rem;
+  }
+
+  .menu-card__flavor-price {
+    font-size: 0.92rem;
+  }
+
+  .menu-card .select,
+  .menu-card .select option {
+    text-overflow: ellipsis;
   }
 }
