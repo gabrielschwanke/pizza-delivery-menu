@@ -1,0 +1,17 @@
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+
+# Logs
+*.log
+
+# Temporários
+*.tmp
+*.temp
+
+# Variáveis de ambiente futuras
+.env
+.env.local
