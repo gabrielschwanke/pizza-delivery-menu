@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
     slogan: "Sabor que conquista!",
     whatsappNumber: "5553991142090", // coloque aqui o número real com DDI + DDD
     whatsappDisplay: "(53) 99114-2090",
-    businessHours: "Segunda a domingo • 18h às 23h",
+    businessHours: "De terça-feira a sábado, das 20h às 00h.",
     address: "Rua Pereira Passos, 437, Pelotas",
     deliveryAreas: "Centro e bairros próximos",
     deliveryFee: 0, // ex.: 5 para R$ 5,00 | deixe 0 se não quiser cobrar
