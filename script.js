@@ -736,6 +736,29 @@ document.addEventListener("DOMContentLoaded", () => {
     return product.sabores.find((sabor) => sabor.nome === flavorName) || null;
   }
 
+  function getOrderItemName(product, selectedFlavor = null) {
+  if (selectedFlavor) {
+    return `${product.nome} - ${selectedFlavor.nome}`;
+  }
+
+  if (product.categoria === "salgadas" || product.categoria === "doces") {
+    return `Pizza - ${product.nome}`;
+  }
+
+  if (
+    product.categoria === "esfihas-salgadas" ||
+    product.categoria === "esfihas-doces"
+  ) {
+    return `Esfiha - ${product.nome}`;
+  }
+
+  if (product.categoria === "combo") {
+    return `Combo - ${product.nome}`;
+  }
+
+  return product.nome;
+}
+
   function renderMenu() {
     const filteredItems = MENU.filter(
       (item) => item.categoria === state.currentCategory,
@@ -937,42 +960,42 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function addToCart(productId, selectedFlavorName = null) {
-    const product = getProductById(productId);
-    if (!product) return;
+  const product = getProductById(productId);
+  if (!product) return;
 
-    let cartId = product.id;
-    let cartName = product.nome;
-    let cartPrice = product.preco;
+  let cartId = product.id;
+  let cartName = getOrderItemName(product);
+  let cartPrice = product.preco;
 
-    if (Array.isArray(product.sabores) && product.sabores.length > 0) {
-      const selectedFlavor = getFlavorByName(
-        product,
-        selectedFlavorName || product.sabores[0].nome,
-      );
+  if (Array.isArray(product.sabores) && product.sabores.length > 0) {
+    const selectedFlavor = getFlavorByName(
+      product,
+      selectedFlavorName || product.sabores[0].nome,
+    );
 
-      if (!selectedFlavor) return;
+    if (!selectedFlavor) return;
 
-      cartId = `${product.id}-${slugify(selectedFlavor.nome)}`;
-      cartName = `${product.nome} - ${selectedFlavor.nome}`;
-      cartPrice = selectedFlavor.preco;
-    }
-
-    const existingItem = state.cart.find((item) => item.id === cartId);
-
-    if (existingItem) {
-      existingItem.qtd += 1;
-    } else {
-      state.cart.push({
-        id: cartId,
-        nome: cartName,
-        preco: cartPrice,
-        qtd: 1,
-      });
-    }
-
-    renderCart();
-    showToast(`${cartName} adicionado ao pedido`);
+    cartId = `${product.id}-${slugify(selectedFlavor.nome)}`;
+    cartName = getOrderItemName(product, selectedFlavor);
+    cartPrice = selectedFlavor.preco;
   }
+
+  const existingItem = state.cart.find((item) => item.id === cartId);
+
+  if (existingItem) {
+    existingItem.qtd += 1;
+  } else {
+    state.cart.push({
+      id: cartId,
+      nome: cartName,
+      preco: cartPrice,
+      qtd: 1,
+    });
+  }
+
+  renderCart();
+  showToast(`${cartName} adicionado ao pedido`);
+}
 
   function increaseItem(productId) {
     const item = state.cart.find((product) => product.id === productId);
