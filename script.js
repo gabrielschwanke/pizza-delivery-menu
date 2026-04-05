@@ -392,6 +392,15 @@ document.addEventListener("DOMContentLoaded", () => {
         },
       ],
     },
+
+    {
+      id: "combo-espetacular",
+      categoria: "combo",
+      nome: "Combo Espetacular",
+      descricao: "Combo com 4 pastéis 11x11 cm, 4 esfihas e 1 porção de batata frita (300g). Escolha os sabores e informe nas observações ou pelo WhatsApp ao finalizar o pedido.",
+      preco: 80,
+      imagem: "./img/combo.png",
+    },
   ];
 
   const STORAGE_KEYS = {
@@ -677,6 +686,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "esfihas-salgadas": "Esfiha salgada",
       "esfihas-doces": "Esfiha doce",
       pasteis: "Pastel",
+      combo: "combo",
     };
 
     return labels[item.categoria] || "Item do cardápio";
@@ -880,21 +890,20 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function handleFlavorChange(event) {
-  const select = event.target.closest(".product-flavor");
-  if (!select) return;
+    const select = event.target.closest(".product-flavor");
+    if (!select) return;
 
-  const product = getProductById(select.dataset.productId);
-  if (!product || !product.sabores) return;
+    const product = getProductById(select.dataset.productId);
+    if (!product || !product.sabores) return;
 
-  const selectedFlavor = getFlavorByName(product, select.value);
-  if (!selectedFlavor) return;
+    const selectedFlavor = getFlavorByName(product, select.value);
+    if (!selectedFlavor) return;
 
-  const priceElement = document.getElementById(`flavor-price-${product.id}`);
-  if (priceElement) {
-    priceElement.textContent = formatPrice(selectedFlavor.preco);
+    const priceElement = document.getElementById(`flavor-price-${product.id}`);
+    if (priceElement) {
+      priceElement.textContent = formatPrice(selectedFlavor.preco);
+    }
   }
-}
-
 
   function handleAddToCart(event) {
     const addButton = event.target.closest(".add-btn");
