@@ -104,8 +104,9 @@ button {
 .topbar__inner {
   display: flex;
   align-items: center;
-  gap: 16px;
+  justify-content: space-between;
   padding: 14px 0;
+  position: relative;
 }
 
 .brand {
@@ -135,8 +136,11 @@ button {
 }
 
 .nav {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
-  gap: 18px;
+  gap: 24px;
 }
 
 .nav a {
