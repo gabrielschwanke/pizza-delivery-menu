@@ -104,7 +104,6 @@ button {
 .topbar__inner {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   gap: 16px;
   padding: 14px 0;
 }
@@ -137,7 +136,6 @@ button {
 
 .nav {
   display: flex;
-  align-items: center;
   gap: 18px;
 }
 
@@ -878,6 +876,29 @@ button {
 @media (max-width: 640px) {
   .topbar__inner {
     gap: 12px;
+  }
+
+  .header__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+  }
+
+  .brand {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .brand__logo {
+    display: block;
+    height: 72px;
+    width: auto;
+    object-fit: contain;
+    margin: 0 auto;
   }
 
   .brand__title {
