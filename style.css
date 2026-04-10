@@ -393,14 +393,20 @@ button {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 16px;
+  overflow: visible;
+}
+
+.catalog__content {
+  overflow: visible;
 }
 
 .menu-card {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 12px;
   padding: 18px;
-  overflow: hidden;
+  overflow: visible;
   border-radius: var(--radius-md);
   border: 1px solid var(--line);
   background: linear-gradient(180deg, var(--surface), var(--surface-2));
@@ -410,6 +416,7 @@ button {
     border-color 0.2s ease,
     box-shadow 0.2s ease;
 }
+
 
 .menu-card:hover {
   transform: translateY(-3px);
@@ -817,6 +824,18 @@ button {
   font-weight: 800;
 }
 
+.menu-card__hint {
+  display: block;
+  margin-top: 6px;
+  font-size: 12px;
+  color: #777;
+}
+
+.menu-card__flavor-price {
+  margin-top: 8px;
+  font-weight: 700;
+}
+
 /* Responsive */
 @media (max-width: 1080px) {
   .catalog,
@@ -982,3 +1001,77 @@ button {
     text-overflow: ellipsis;
   }
 }
+
+.menu-grid > * {
+  min-width: 0;
+}
+
+.menu-card {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+
+.menu-card__top {
+  min-width: 0;
+}
+
+.menu-card__top > div {
+  min-width: 0;
+}
+
+.menu-card__variant {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+
+.menu-card .select,
+.product-flavor {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.pizza-second-flavor,
+.custom-select {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  overflow: visible;
+  white-space: normal;
+}
+
+
+.menu-card h3,
+.menu-card p {
+  min-width: 0;
+  overflow-wrap: break-word;
+}
+
+.custom-select__label {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.custom-select__dropdown {
+  min-width: 100%;
+  overflow-x: hidden;
+}
+
+.custom-select__option {
+  white-space: normal;
+}
+
+.menu-card {
+  z-index: 1;
+}
+
+.menu-card:has(.custom-select.is-open) {
+  z-index: 30;
+}
+
+

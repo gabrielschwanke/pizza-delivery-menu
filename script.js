@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
     whatsappNumber: "5553991142090", // coloque aqui o número real com DDI + DDD
     whatsappDisplay: "(53) 99114-2090",
     businessHours: "De segunda a segunda, das 20h às 00h.",
-    address: "Rua Pereira Passos, 437, Pelotas",
+    address: "Rua Pereira Passos, 437 - Areal, Pelotas",
     deliveryAreas: "Centro e bairros próximos",
     deliveryFee: 0, // ex.: 5 para R$ 5,00 | deixe 0 se não quiser cobrar
     minOrder: 0, // ex.: 30 para pedido mínimo de R$ 30,00
@@ -397,11 +397,14 @@ document.addEventListener("DOMContentLoaded", () => {
       id: "combo-espetacular",
       categoria: "combo",
       nome: "Combo Espetacular",
-      descricao: "Combo com 4 pastéis 11x11 cm, 4 esfihas e 1 porção de batata frita (300g). Escolha os sabores e informe nas observações ou pelo WhatsApp ao finalizar o pedido.",
+      descricao:
+        "Combo com 4 pastéis 11x11 cm, 4 esfihas e 1 porção de batata frita (300g). Escolha os sabores e informe nas observações ou pelo WhatsApp ao finalizar o pedido.",
       preco: 80,
       imagem: "./img/combo.png",
     },
   ];
+
+  const PIZZA_CATEGORIES = ["salgadas", "doces"];
 
   const STORAGE_KEYS = {
     cart: "venezza-cart",
@@ -514,6 +517,10 @@ document.addEventListener("DOMContentLoaded", () => {
     elements.filters.addEventListener("click", handleCategoryChange);
     elements.menuGrid.addEventListener("click", handleAddToCart);
     elements.menuGrid.addEventListener("change", handleFlavorChange);
+    elements.menuGrid.addEventListener(
+      "custom-select:change",
+      handleCustomSelectChange,
+    );
     elements.cartItems.addEventListener("click", handleCartActions);
     elements.checkoutBtn.addEventListener("click", sendToWhatsApp);
     elements.clearCartBtn.addEventListener("click", clearCart);
@@ -622,6 +629,106 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  function isPizza(item) {
+    return Boolean(item) && PIZZA_CATEGORIES.includes(item.categoria);
+  }
+
+  function getAllPizzaFlavors() {
+    return MENU.filter((item) => isPizza(item));
+  }
+
+  function getPizzaCategoryName(category) {
+    return category === "doces" ? "Doce" : "Salgada";
+  }
+
+  function getTwoFlavorsPrice(firstPizza, secondPizzaId) {
+    if (!firstPizza) return 0;
+
+    if (!secondPizzaId) {
+      return firstPizza.preco;
+    }
+
+    const secondPizza = getProductById(secondPizzaId);
+
+    if (!secondPizza || !isPizza(secondPizza)) {
+      return firstPizza.preco;
+    }
+
+    return Math.max(firstPizza.preco, secondPizza.preco);
+  }
+
+  function renderPizzaSecondFlavorCustomSelect(item, allPizzaFlavors) {
+    return `
+    <div class="menu-card__variant">
+      <label class="menu-card__variant-label">
+        2º sabor (opcional)
+      </label>
+
+      <div
+        class="custom-select pizza-second-flavor"
+        data-custom-select
+        data-product-id="${item.id}"
+      >
+        <input
+          type="hidden"
+          class="custom-select__native pizza-second-flavor-input"
+          value=""
+        />
+
+        <button
+          type="button"
+          class="custom-select__trigger"
+          aria-label="Selecionar segundo sabor"
+        >
+          <span class="custom-select__label">Apenas 1 sabor</span>
+          <span class="custom-select__arrow">⌄</span>
+        </button>
+
+        <div class="custom-select__dropdown">
+          <button
+            type="button"
+            class="custom-select__option is-selected"
+            data-value=""
+            data-label="Apenas 1 sabor"
+            aria-selected="true"
+          >
+            Apenas 1 sabor
+          </button>
+
+          ${allPizzaFlavors
+            .filter((pizza) => pizza.id !== item.id)
+            .map(
+              (pizza) => `
+                <button
+                  type="button"
+                  class="custom-select__option"
+                  data-value="${pizza.id}"
+                  data-label="${pizza.nome} (${getPizzaCategoryName(
+                    pizza.categoria,
+                  )}) — ${formatPrice(pizza.preco)}"
+                  aria-selected="false"
+                >
+                  ${pizza.nome} (${getPizzaCategoryName(
+                    pizza.categoria,
+                  )}) — ${formatPrice(pizza.preco)}
+                </button>
+              `,
+            )
+            .join("")}
+        </div>
+      </div>
+
+      <small class="menu-card__hint">
+        Em pizzas de 2 sabores, será cobrado o valor do sabor mais caro.
+      </small>
+
+      <div class="menu-card__flavor-price" id="pizza-price-${item.id}">
+        ${formatPrice(item.preco)}
+      </div>
+    </div>
+  `;
+  }
+
   function getProductById(productId) {
     return MENU.find((item) => item.id === productId);
   }
@@ -640,32 +747,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function getCartItemsCount() {
     return state.cart.reduce((total, item) => total + item.qtd, 0);
-  }
-
-  function getCategoryLabel(category) {
-    const labels = {
-      salgadas: "Pizza salgada",
-      doces: "Pizza doce",
-      "esfihas-salgadas": "Esfiha salgada",
-      "esfihas-doces": "Esfiha doce",
-    };
-
-    return labels[category] || "Item do cardápio";
-  }
-
-  function getItemAlt(item) {
-    if (item.categoria === "salgadas" || item.categoria === "doces") {
-      return `Pizza ${item.nome}`;
-    }
-
-    if (
-      item.categoria === "esfihas-salgadas" ||
-      item.categoria === "esfihas-doces"
-    ) {
-      return `Esfiha ${item.nome}`;
-    }
-
-    return item.nome;
   }
 
   function slugify(text) {
@@ -737,100 +818,113 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function getOrderItemName(product, selectedFlavor = null) {
-  if (selectedFlavor) {
-    return `${product.nome} - ${selectedFlavor.nome}`;
-  }
+    if (selectedFlavor) {
+      return `${product.nome} - ${selectedFlavor.nome}`;
+    }
 
-  if (product.categoria === "salgadas" || product.categoria === "doces") {
-    return `Pizza - ${product.nome}`;
-  }
+    if (product.categoria === "salgadas" || product.categoria === "doces") {
+      return `Pizza - ${product.nome}`;
+    }
 
-  if (
-    product.categoria === "esfihas-salgadas" ||
-    product.categoria === "esfihas-doces"
-  ) {
-    return `Esfiha - ${product.nome}`;
-  }
+    if (
+      product.categoria === "esfihas-salgadas" ||
+      product.categoria === "esfihas-doces"
+    ) {
+      return `Esfiha - ${product.nome}`;
+    }
 
-  if (product.categoria === "combo") {
-    return `Combo - ${product.nome}`;
-  }
+    if (product.categoria === "combo") {
+      return `Combo - ${product.nome}`;
+    }
 
-  return product.nome;
-}
+    return product.nome;
+  }
 
   function renderMenu() {
     const filteredItems = MENU.filter(
       (item) => item.categoria === state.currentCategory,
     );
 
+    const allPizzaFlavors = getAllPizzaFlavors();
+
     elements.menuGrid.innerHTML = filteredItems
       .map((item) => {
         const hasFlavors =
           Array.isArray(item.sabores) && item.sabores.length > 0;
 
+        const isPizzaItem = isPizza(item);
+
         return `
-          <article class="menu-card">
-            <img
-              src="${item.imagem}"
-              alt="${getItemAlt(item)}"
-              class="menu-card__image"
-              loading="lazy"
-            />
+        <article class="menu-card">
+          <img
+            src="${item.imagem}"
+            alt="${getItemAlt(item)}"
+            class="menu-card__image"
+            loading="lazy"
+          />
 
-            <span class="menu-card__tag">
-              ${getCategoryLabel(item)}
-            </span>
+          <span class="menu-card__tag">
+            ${getCategoryLabel(item)}
+          </span>
 
-            <div class="menu-card__top">
-              <div>
-                <h3>${item.nome}</h3>
-                <p>${item.descricao}</p>
-              </div>
-
-              ${getItemPriceLabel(item) ? `<span class="price">${getItemPriceLabel(item)}</span>` : ""}
-
+          <div class="menu-card__top">
+            <div>
+              <h3>${item.nome}</h3>
+              <p>${item.descricao}</p>
             </div>
 
             ${
-              hasFlavors
-                ? `
-      <div class="menu-card__variant">
-        <label class="menu-card__variant-label" for="flavor-${item.id}">
-          Escolha o sabor
-        </label>
-
-        <select
-          class="select product-flavor"
-          id="flavor-${item.id}"
-          data-product-id="${item.id}"
-        >
-          ${item.sabores
-            .map(
-              (sabor) => `
-                <option value="${sabor.nome}">
-                  ${sabor.nome}
-                </option>
-              `,
-            )
-            .join("")}
-        </select>
-
-        <div class="menu-card__flavor-price" id="flavor-price-${item.id}">
-          ${formatPrice(item.sabores[0].preco)}
-        </div>
-      </div>
-    `
+              getItemPriceLabel(item)
+                ? `<span class="price">${getItemPriceLabel(item)}</span>`
                 : ""
             }
+          </div>
 
-            <button class="btn btn--primary add-btn" data-id="${item.id}" type="button">
-              Adicionar ao pedido
-            </button>
-          </article>
-        `;
+          ${
+            hasFlavors
+              ? `
+                <div class="menu-card__variant">
+                  <label class="menu-card__variant-label" for="flavor-${item.id}">
+                    Escolha o sabor
+                  </label>
+
+                  <select
+                    class="select product-flavor"
+                    id="flavor-${item.id}"
+                    data-product-id="${item.id}"
+                  >
+                    ${item.sabores
+                      .map(
+                        (sabor) => `
+                          <option value="${sabor.nome}">
+                            ${sabor.nome}
+                          </option>
+                        `,
+                      )
+                      .join("")}
+                  </select>
+
+                  <div class="menu-card__flavor-price" id="flavor-price-${item.id}">
+                    ${formatPrice(item.sabores[0].preco)}
+                  </div>
+                </div>
+              `
+              : ""
+          }
+
+          ${isPizzaItem ? renderPizzaSecondFlavorCustomSelect(item, allPizzaFlavors) : ""}
+
+          <button class="btn btn--primary add-btn" data-id="${item.id}" type="button">
+            Adicionar ao pedido
+          </button>
+        </article>
+      `;
       })
       .join("");
+
+    if (window.CustomSelect) {
+      window.CustomSelect.initAll(elements.menuGrid);
+    }
   }
 
   function renderCart() {
@@ -912,6 +1006,25 @@ document.addEventListener("DOMContentLoaded", () => {
     renderMenu();
   }
 
+  function handleCustomSelectChange(event) {
+    const customSelect = event.target.closest(".pizza-second-flavor");
+    if (!customSelect) return;
+
+    const productId = customSelect.dataset.productId;
+    const firstPizza = getProductById(productId);
+    if (!firstPizza) return;
+
+    const secondFlavorId = event.detail.value;
+    const finalPrice = getTwoFlavorsPrice(firstPizza, secondFlavorId);
+
+    const priceElement = document.getElementById(
+      `pizza-price-${firstPizza.id}`,
+    );
+    if (priceElement) {
+      priceElement.textContent = formatPrice(finalPrice);
+    }
+  }
+
   function handleFlavorChange(event) {
     const select = event.target.closest(".product-flavor");
     if (!select) return;
@@ -936,7 +1049,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const flavorSelect = card?.querySelector(".product-flavor");
     const selectedFlavor = flavorSelect ? flavorSelect.value : null;
 
-    addToCart(addButton.dataset.id, selectedFlavor);
+    const secondFlavorInput = card?.querySelector(".pizza-second-flavor-input");
+    const secondFlavorId = secondFlavorInput ? secondFlavorInput.value : null;
+
+    addToCart(addButton.dataset.id, selectedFlavor, secondFlavorId);
   }
 
   function handleCartActions(event) {
@@ -959,43 +1075,66 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  function addToCart(productId, selectedFlavorName = null) {
-  const product = getProductById(productId);
-  if (!product) return;
+  function addToCart(
+    productId,
+    selectedFlavorName = null,
+    secondFlavorId = null,
+  ) {
+    const product = getProductById(productId);
+    if (!product) return;
 
-  let cartId = product.id;
-  let cartName = getOrderItemName(product);
-  let cartPrice = product.preco;
+    let cartId = product.id;
+    let cartName = getOrderItemName(product);
+    let cartPrice = product.preco;
 
-  if (Array.isArray(product.sabores) && product.sabores.length > 0) {
-    const selectedFlavor = getFlavorByName(
-      product,
-      selectedFlavorName || product.sabores[0].nome,
-    );
+    if (isPizza(product) && secondFlavorId) {
+      const secondPizza = getProductById(secondFlavorId);
 
-    if (!selectedFlavor) return;
+      if (
+        secondPizza &&
+        isPizza(secondPizza) &&
+        secondPizza.id !== product.id
+      ) {
+        const orderedFlavors = [product, secondPizza].sort((a, b) =>
+          a.nome.localeCompare(b.nome, "pt-BR"),
+        );
 
-    cartId = `${product.id}-${slugify(selectedFlavor.nome)}`;
-    cartName = getOrderItemName(product, selectedFlavor);
-    cartPrice = selectedFlavor.preco;
+        cartId = `pizza-2-sabores-${orderedFlavors
+          .map((item) => item.id)
+          .join("-")}`;
+
+        cartName = `Pizza 2 sabores - ${orderedFlavors[0].nome} / ${orderedFlavors[1].nome}`;
+        cartPrice = Math.max(product.preco, secondPizza.preco);
+      }
+    } else if (Array.isArray(product.sabores) && product.sabores.length > 0) {
+      const selectedFlavor = getFlavorByName(
+        product,
+        selectedFlavorName || product.sabores[0].nome,
+      );
+
+      if (!selectedFlavor) return;
+
+      cartId = `${product.id}-${slugify(selectedFlavor.nome)}`;
+      cartName = getOrderItemName(product, selectedFlavor);
+      cartPrice = selectedFlavor.preco;
+    }
+
+    const existingItem = state.cart.find((item) => item.id === cartId);
+
+    if (existingItem) {
+      existingItem.qtd += 1;
+    } else {
+      state.cart.push({
+        id: cartId,
+        nome: cartName,
+        preco: cartPrice,
+        qtd: 1,
+      });
+    }
+
+    renderCart();
+    showToast(`${cartName} adicionado ao pedido`);
   }
-
-  const existingItem = state.cart.find((item) => item.id === cartId);
-
-  if (existingItem) {
-    existingItem.qtd += 1;
-  } else {
-    state.cart.push({
-      id: cartId,
-      nome: cartName,
-      preco: cartPrice,
-      qtd: 1,
-    });
-  }
-
-  renderCart();
-  showToast(`${cartName} adicionado ao pedido`);
-}
 
   function increaseItem(productId) {
     const item = state.cart.find((product) => product.id === productId);
