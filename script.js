@@ -729,6 +729,62 @@ document.addEventListener("DOMContentLoaded", () => {
   `;
   }
 
+  function renderProductFlavorCustomSelect(item) {
+    return `
+    <div class="menu-card__variant">
+      <label class="menu-card__variant-label">
+        Escolha o sabor
+      </label>
+
+      <div
+        class="custom-select product-flavor-select"
+        data-custom-select
+        data-product-id="${item.id}"
+      >
+        <input
+          type="hidden"
+          class="custom-select__native product-flavor-input"
+          value="${item.sabores[0].nome}"
+        />
+
+        <button
+          type="button"
+          class="custom-select__trigger"
+          aria-label="Selecionar sabor"
+        >
+          <span class="custom-select__label">
+            ${item.sabores[0].nome} — ${formatPrice(item.sabores[0].preco)}
+          </span>
+          <span class="custom-select__arrow">⌄</span>
+        </button>
+
+        <div class="custom-select__dropdown">
+          ${item.sabores
+            .map(
+              (sabor, index) => `
+                <button
+                  type="button"
+                  class="custom-select__option ${index === 0 ? "is-selected" : ""}"
+                  data-value="${sabor.nome}"
+                  data-label="${sabor.nome} — ${formatPrice(sabor.preco)}"
+                  aria-selected="${index === 0 ? "true" : "false"}"
+                >
+                  ${sabor.nome} — ${formatPrice(sabor.preco)}
+                </button>
+              `,
+            )
+            .join("")}
+        </div>
+      </div>
+
+      <div class="menu-card__flavor-price" id="flavor-price-${item.id}">
+        ${formatPrice(item.sabores[0].preco)}
+      </div>
+    </div>
+  `;
+  }
+
+ 
   function getProductById(productId) {
     return MENU.find((item) => item.id === productId);
   }
@@ -880,37 +936,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
           </div>
 
-          ${
-            hasFlavors
-              ? `
-                <div class="menu-card__variant">
-                  <label class="menu-card__variant-label" for="flavor-${item.id}">
-                    Escolha o sabor
-                  </label>
-
-                  <select
-                    class="select product-flavor"
-                    id="flavor-${item.id}"
-                    data-product-id="${item.id}"
-                  >
-                    ${item.sabores
-                      .map(
-                        (sabor) => `
-                          <option value="${sabor.nome}">
-                            ${sabor.nome}
-                          </option>
-                        `,
-                      )
-                      .join("")}
-                  </select>
-
-                  <div class="menu-card__flavor-price" id="flavor-price-${item.id}">
-                    ${formatPrice(item.sabores[0].preco)}
-                  </div>
-                </div>
-              `
-              : ""
-          }
+         ${hasFlavors ? renderProductFlavorCustomSelect(item) : ""}
 
           ${isPizzaItem ? renderPizzaSecondFlavorCustomSelect(item, allPizzaFlavors) : ""}
 
@@ -1007,21 +1033,42 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function handleCustomSelectChange(event) {
-    const customSelect = event.target.closest(".pizza-second-flavor");
-    if (!customSelect) return;
+    const pizzaSelect = event.target.closest(".pizza-second-flavor");
 
-    const productId = customSelect.dataset.productId;
-    const firstPizza = getProductById(productId);
-    if (!firstPizza) return;
+    if (pizzaSelect) {
+      const productId = pizzaSelect.dataset.productId;
+      const firstPizza = getProductById(productId);
+      if (!firstPizza) return;
 
-    const secondFlavorId = event.detail.value;
-    const finalPrice = getTwoFlavorsPrice(firstPizza, secondFlavorId);
+      const secondFlavorId = event.detail.value;
+      const finalPrice = getTwoFlavorsPrice(firstPizza, secondFlavorId);
 
-    const priceElement = document.getElementById(
-      `pizza-price-${firstPizza.id}`,
-    );
-    if (priceElement) {
-      priceElement.textContent = formatPrice(finalPrice);
+      const priceElement = document.getElementById(
+        `pizza-price-${firstPizza.id}`,
+      );
+      if (priceElement) {
+        priceElement.textContent = formatPrice(finalPrice);
+      }
+
+      return;
+    }
+
+    const flavorSelect = event.target.closest(".product-flavor-select");
+
+    if (flavorSelect) {
+      const productId = flavorSelect.dataset.productId;
+      const product = getProductById(productId);
+      if (!product || !product.sabores) return;
+
+      const selectedFlavor = getFlavorByName(product, event.detail.value);
+      if (!selectedFlavor) return;
+
+      const priceElement = document.getElementById(
+        `flavor-price-${product.id}`,
+      );
+      if (priceElement) {
+        priceElement.textContent = formatPrice(selectedFlavor.preco);
+      }
     }
   }
 
@@ -1046,8 +1093,8 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!addButton) return;
 
     const card = addButton.closest(".menu-card");
-    const flavorSelect = card?.querySelector(".product-flavor");
-    const selectedFlavor = flavorSelect ? flavorSelect.value : null;
+    const flavorInput = card?.querySelector(".product-flavor-input");
+    const selectedFlavor = flavorInput ? flavorInput.value : null;
 
     const secondFlavorInput = card?.querySelector(".pizza-second-flavor-input");
     const secondFlavorId = secondFlavorInput ? secondFlavorInput.value : null;
