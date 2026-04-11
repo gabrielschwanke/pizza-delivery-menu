@@ -427,6 +427,7 @@ document.addEventListener("DOMContentLoaded", () => {
     filters: document.getElementById("filters"),
     menuGrid: document.getElementById("menuGrid"),
     cartItems: document.getElementById("cartItems"),
+    orderForm: document.getElementById("orderForm"),
     orderSubtotal: document.getElementById("orderSubtotal"),
     deliveryFeeRow: document.getElementById("deliveryFeeRow"),
     deliveryFeeValue: document.getElementById("deliveryFeeValue"),
@@ -456,6 +457,12 @@ document.addEventListener("DOMContentLoaded", () => {
   function init() {
     applyConfigToUI();
     hydrateForm();
+    if (window.CustomSelect) {
+      window.CustomSelect.initAll(document);
+    }
+
+    syncOrderFormCustomSelects();
+
     bindEvents();
     toggleAddressField();
     toggleCashFields();
@@ -521,6 +528,11 @@ document.addEventListener("DOMContentLoaded", () => {
       "custom-select:change",
       handleCustomSelectChange,
     );
+    elements.orderForm.addEventListener(
+      "custom-select:change",
+      handleOrderFormCustomSelectChange,
+    );
+
     elements.cartItems.addEventListener("click", handleCartActions);
     elements.checkoutBtn.addEventListener("click", sendToWhatsApp);
     elements.clearCartBtn.addEventListener("click", clearCart);
@@ -569,6 +581,76 @@ document.addEventListener("DOMContentLoaded", () => {
     elements.orderNotes.value = localStorage.getItem(STORAGE_KEYS.notes) || "";
   }
 
+  function syncCustomSelectValue(input, value) {
+    if (!input) return;
+
+    input.value = value;
+
+    const customSelect = input.closest("[data-custom-select]");
+    if (!customSelect) return;
+
+    const options = customSelect.querySelectorAll(".custom-select__option");
+    const label = customSelect.querySelector(".custom-select__label");
+
+    const selectedOption = [...options].find(
+      (option) => (option.dataset.value ?? "") === value,
+    );
+
+    if (!selectedOption) return;
+
+    options.forEach((option) => {
+      option.classList.remove("is-selected", "is-focused");
+      option.setAttribute("aria-selected", "false");
+    });
+
+    selectedOption.classList.add("is-selected");
+    selectedOption.setAttribute("aria-selected", "true");
+
+    if (label) {
+      label.textContent =
+        selectedOption.dataset.label ?? selectedOption.textContent.trim();
+    }
+  }
+
+  function syncOrderFormCustomSelects() {
+    syncCustomSelectValue(
+      elements.orderType,
+      elements.orderType.value || "Delivery",
+    );
+    syncCustomSelectValue(
+      elements.paymentMethod,
+      elements.paymentMethod.value || "Pix",
+    );
+    syncCustomSelectValue(
+      elements.needChange,
+      elements.needChange.value || "Não",
+    );
+  }
+
+  function handleOrderFormCustomSelectChange(event) {
+  const customSelect = event.target.closest("[data-custom-select]");
+  if (!customSelect) return;
+
+  const nativeInput = customSelect.querySelector(".custom-select__native");
+  if (!nativeInput) return;
+
+  persistForm();
+
+  if (nativeInput.id === "orderType") {
+    toggleAddressField();
+    renderCart();
+  }
+
+  if (nativeInput.id === "paymentMethod") {
+    toggleCashFields();
+  }
+
+  if (nativeInput.id === "needChange") {
+    toggleCashFields();
+  }
+}
+
+
   function persistForm() {
     localStorage.setItem(STORAGE_KEYS.name, elements.customerName.value);
     localStorage.setItem(STORAGE_KEYS.address, elements.customerAddress.value);
@@ -600,27 +682,28 @@ document.addEventListener("DOMContentLoaded", () => {
     elements.addressGroup.classList.toggle("hidden", !isDelivery);
   }
 
-  function toggleCashFields() {
-    const isCash = elements.paymentMethod.value === "Dinheiro";
-    const needsChange = elements.needChange.value === "Sim";
+function toggleCashFields() {
+  const isCash = elements.paymentMethod.value === "Dinheiro";
+  const needsChange = elements.needChange.value === "Sim";
 
-    elements.cashChangeGroup.classList.toggle("hidden", !isCash);
-    elements.changeAmountGroup.classList.toggle(
-      "hidden",
-      !isCash || !needsChange,
-    );
+  elements.cashChangeGroup.classList.toggle("hidden", !isCash);
+  elements.changeAmountGroup.classList.toggle(
+    "hidden",
+    !isCash || !needsChange,
+  );
 
-    if (!isCash) {
-      elements.needChange.value = "Não";
-      elements.changeAmount.value = "";
-      persistForm();
-    }
-
-    if (isCash && !needsChange) {
-      elements.changeAmount.value = "";
-      persistForm();
-    }
+  if (!isCash) {
+    syncCustomSelectValue(elements.needChange, "Não");
+    elements.changeAmount.value = "";
+    persistForm();
   }
+
+  if (isCash && !needsChange) {
+    elements.changeAmount.value = "";
+    persistForm();
+  }
+}
+
 
   function formatPrice(value) {
     return value.toLocaleString("pt-BR", {
@@ -784,7 +867,6 @@ document.addEventListener("DOMContentLoaded", () => {
   `;
   }
 
- 
   function getProductById(productId) {
     return MENU.find((item) => item.id === productId);
   }

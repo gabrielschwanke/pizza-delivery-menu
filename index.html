@@ -134,31 +134,82 @@
               <div class="form-row">
                 <div class="form-group">
                   <label for="orderType">Tipo do pedido</label>
-                  <select class="select" id="orderType">
-                    <option value="Delivery">Delivery</option>
-                    <option value="Retirada">Retirada</option>
-                  </select>
+
+                  <div class="custom-select order-type-select" data-custom-select>
+                    <input type="hidden" class="custom-select__native" id="orderType" value="Delivery" />
+
+                    <button type="button" class="custom-select__trigger" aria-label="Selecionar tipo do pedido">
+                      <span class="custom-select__label">Delivery</span>
+                      <span class="custom-select__arrow">⌄</span>
+                    </button>
+
+                    <div class="custom-select__dropdown">
+                      <button type="button" class="custom-select__option is-selected" data-value="Delivery" data-label="Delivery" aria-selected="true">
+                        Delivery
+                      </button>
+
+                      <button type="button" class="custom-select__option" data-value="Retirada" data-label="Retirada" aria-selected="false">
+                        Retirada
+                      </button>
+                    </div>
+                  </div>
                 </div>
+
 
                 <div class="form-group">
                   <label for="paymentMethod">Forma de pagamento</label>
-                  <select class="select" id="paymentMethod">
-                    <option value="Pix">Pix</option>
-                    <option value="Dinheiro">Dinheiro</option>
-                    <option value="Cartão">Cartão</option>
-                  </select>
+
+                  <div class="custom-select payment-method-select" data-custom-select>
+                    <input type="hidden" class="custom-select__native" id="paymentMethod" value="Pix" />
+
+                    <button type="button" class="custom-select__trigger" aria-label="Selecionar forma de pagamento">
+                      <span class="custom-select__label">Pix</span>
+                      <span class="custom-select__arrow">⌄</span>
+                    </button>
+
+                    <div class="custom-select__dropdown">
+                      <button type="button" class="custom-select__option is-selected" data-value="Pix" data-label="Pix" aria-selected="true">
+                        Pix
+                      </button>
+
+                      <button type="button" class="custom-select__option" data-value="Dinheiro" data-label="Dinheiro" aria-selected="false">
+                        Dinheiro
+                      </button>
+
+                      <button type="button" class="custom-select__option" data-value="Cartão" data-label="Cartão" aria-selected="false">
+                        Cartão
+                      </button>
+                    </div>
+                  </div>
                 </div>
+
               </div>
 
               <div class="cash-change-group hidden" id="cashChangeGroup">
                 <div class="form-row">
                   <div class="form-group">
                     <label for="needChange">Precisa de troco?</label>
-                    <select class="select" id="needChange">
-                      <option value="Não">Não</option>
-                      <option value="Sim">Sim</option>
-                    </select>
+
+                    <div class="custom-select need-change-select" data-custom-select>
+                      <input type="hidden" class="custom-select__native" id="needChange" value="Não" />
+
+                      <button type="button" class="custom-select__trigger" aria-label="Selecionar necessidade de troco">
+                        <span class="custom-select__label">Não</span>
+                        <span class="custom-select__arrow">⌄</span>
+                      </button>
+
+                      <div class="custom-select__dropdown">
+                        <button type="button" class="custom-select__option is-selected" data-value="Não" data-label="Não" aria-selected="true">
+                          Não
+                        </button>
+
+                        <button type="button" class="custom-select__option" data-value="Sim" data-label="Sim" aria-selected="false">
+                          Sim
+                        </button>
+                      </div>
+                    </div>
                   </div>
+
 
                   <div class="form-group hidden" id="changeAmountGroup">
                     <label for="changeAmount">Troco para quanto?</label>
@@ -169,7 +220,7 @@
 
               <div class="form-group">
                 <label for="orderNotes">Observações</label>
-                <textarea class="textarea" id="orderNotes" placeholder="Ex.: sem cebola, cortar em 8 pedaços, troco para R$100"></textarea>
+                <textarea class="textarea" id="orderNotes" placeholder="Ex.: Quero minha pizza sem cebola.."></textarea>
               </div>
             </form>
 
