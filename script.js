@@ -7,12 +7,12 @@ document.addEventListener("DOMContentLoaded", () => {
     businessHours: "De segunda a segunda, das 20h às 00h.",
     address: "Rua Pereira Passos, 437 - Areal, Pelotas",
     deliveryAreas: "Centro e bairros próximos",
-    deliveryFee: 0, // ex.: 5 para R$ 5,00 
+    deliveryFee: 0, // ex.: 5 para R$ 5,00
     minOrder: 0, // ex.: 30 para pedido mínimo de R$ 30,00
   };
 
   const MENU = [
-     {
+    {
       id: "iscas-fritas",
       categoria: "salgadas",
       nome: "Iscas Fritas",
@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
       preco: 60,
       imagem: "./img/pizzas/pizzafritas.png",
     },
-    
+
     {
       id: "calabresa",
       categoria: "salgadas",
@@ -394,10 +394,10 @@ document.addEventListener("DOMContentLoaded", () => {
           nome: "Chocolate Preto",
           descricao: "Recheio cremoso de chocolate preto",
           preco: 16,
-        }
+        },
       ],
     },
-  
+
     {
       id: "combo-espetacular",
       categoria: "combo",
@@ -633,28 +633,27 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function handleOrderFormCustomSelectChange(event) {
-  const customSelect = event.target.closest("[data-custom-select]");
-  if (!customSelect) return;
+    const customSelect = event.target.closest("[data-custom-select]");
+    if (!customSelect) return;
 
-  const nativeInput = customSelect.querySelector(".custom-select__native");
-  if (!nativeInput) return;
+    const nativeInput = customSelect.querySelector(".custom-select__native");
+    if (!nativeInput) return;
 
-  persistForm();
+    persistForm();
 
-  if (nativeInput.id === "orderType") {
-    toggleAddressField();
-    renderCart();
+    if (nativeInput.id === "orderType") {
+      toggleAddressField();
+      renderCart();
+    }
+
+    if (nativeInput.id === "paymentMethod") {
+      toggleCashFields();
+    }
+
+    if (nativeInput.id === "needChange") {
+      toggleCashFields();
+    }
   }
-
-  if (nativeInput.id === "paymentMethod") {
-    toggleCashFields();
-  }
-
-  if (nativeInput.id === "needChange") {
-    toggleCashFields();
-  }
-}
-
 
   function persistForm() {
     localStorage.setItem(STORAGE_KEYS.name, elements.customerName.value);
@@ -687,28 +686,27 @@ document.addEventListener("DOMContentLoaded", () => {
     elements.addressGroup.classList.toggle("hidden", !isDelivery);
   }
 
-function toggleCashFields() {
-  const isCash = elements.paymentMethod.value === "Dinheiro";
-  const needsChange = elements.needChange.value === "Sim";
+  function toggleCashFields() {
+    const isCash = elements.paymentMethod.value === "Dinheiro";
+    const needsChange = elements.needChange.value === "Sim";
 
-  elements.cashChangeGroup.classList.toggle("hidden", !isCash);
-  elements.changeAmountGroup.classList.toggle(
-    "hidden",
-    !isCash || !needsChange,
-  );
+    elements.cashChangeGroup.classList.toggle("hidden", !isCash);
+    elements.changeAmountGroup.classList.toggle(
+      "hidden",
+      !isCash || !needsChange,
+    );
 
-  if (!isCash) {
-    syncCustomSelectValue(elements.needChange, "Não");
-    elements.changeAmount.value = "";
-    persistForm();
+    if (!isCash) {
+      syncCustomSelectValue(elements.needChange, "Não");
+      elements.changeAmount.value = "";
+      persistForm();
+    }
+
+    if (isCash && !needsChange) {
+      elements.changeAmount.value = "";
+      persistForm();
+    }
   }
-
-  if (isCash && !needsChange) {
-    elements.changeAmount.value = "";
-    persistForm();
-  }
-}
-
 
   function formatPrice(value) {
     return value.toLocaleString("pt-BR", {
@@ -962,6 +960,10 @@ function toggleCashFields() {
 
   function getOrderItemName(product, selectedFlavor = null) {
     if (selectedFlavor) {
+      if (product.categoria === "pasteis") {
+        return `Pastel (${selectedFlavor.tipo}) - ${selectedFlavor.nome}`;
+      }
+
       return `${product.nome} - ${selectedFlavor.nome}`;
     }
 
