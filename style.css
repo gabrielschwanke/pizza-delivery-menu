@@ -199,6 +199,12 @@ button {
   box-shadow: var(--shadow);
 }
 
+.menu-back-button {
+  display: flex;
+  justify-content: left;
+  margin-top: 32px;
+}
+
 /* Hero */
 .hero {
   padding: 56px 0 28px;

@@ -7,11 +7,21 @@ document.addEventListener("DOMContentLoaded", () => {
     businessHours: "De segunda a segunda, das 20h às 00h.",
     address: "Rua Pereira Passos, 437 - Areal, Pelotas",
     deliveryAreas: "Centro e bairros próximos",
-    deliveryFee: 0, // ex.: 5 para R$ 5,00 | deixe 0 se não quiser cobrar
+    deliveryFee: 0, // ex.: 5 para R$ 5,00 
     minOrder: 0, // ex.: 30 para pedido mínimo de R$ 30,00
   };
 
   const MENU = [
+     {
+      id: "iscas-fritas",
+      categoria: "salgadas",
+      nome: "Iscas Fritas",
+      descricao:
+        "Iscas com fritas carne de rês, molho especial mussarela e fritas",
+      preco: 60,
+      imagem: "./img/pizzas/pizzafritas.png",
+    },
+    
     {
       id: "calabresa",
       categoria: "salgadas",
@@ -85,15 +95,7 @@ document.addEventListener("DOMContentLoaded", () => {
       preco: 55,
       imagem: "./img/pizzas/peperone.jpeg",
     },
-    {
-      id: "iscas-fritas",
-      categoria: "salgadas",
-      nome: "Iscas Fritas",
-      descricao:
-        "Iscas com fritas carne de rês, molho especial mussarela e fritas",
-      preco: 60,
-      imagem: "./img/pizzas/pizzafritas.png",
-    },
+
     {
       id: "lombinho-abacaxi",
       categoria: "salgadas",
@@ -310,89 +312,92 @@ document.addEventListener("DOMContentLoaded", () => {
     {
       id: "pastel-salgado",
       categoria: "pasteis",
-      nome: "Pastel Salgado",
+      nome: "",
       descricao: "Escolha o sabor no card antes de adicionar ao pedido.",
       imagem: "./img/pastel/pastel2.png",
-      rotulo: "Pastel salgado",
+      rotulo: "Pastéis Salgados e Doces",
       sabores: [
         {
+          tipo: "Salgado",
           nome: "Tradicional",
           descricao: "Carne, ovo e queijo",
           preco: 15,
         },
         {
+          tipo: "Salgado",
           nome: "Aquele Pastel",
           descricao: "Calabresa, ovo, carne moída e queijo",
           preco: 17,
         },
         {
+          tipo: "Salgado",
           nome: "Frango com Catupiry",
           descricao: "Frango, mussarela e catupiry",
           preco: 15,
         },
         {
+          tipo: "Salgado",
           nome: "Franbacon",
           descricao: "Frango, mussarela e bacon",
           preco: 17,
         },
         {
+          tipo: "Salgado",
           nome: "Strogonoff de Frango",
           descricao: "Frango, mussarela e creme de leite",
           preco: 17,
         },
         {
+          tipo: "Salgado",
           nome: "Calabresa",
           descricao: "Calabresa e queijo",
           preco: 15,
         },
         {
+          tipo: "Salgado",
           nome: "Presunto e Queijo",
           descricao: "Presunto e mussarela",
           preco: 15,
         },
         {
+          tipo: "Salgado",
           nome: "4 Queijos",
           descricao: "Mussarela, catupiry, provolone e cheddar",
           preco: 17,
         },
         {
+          tipo: "Salgado",
           nome: "Pizza",
           descricao: "Presunto, queijo, tomate e orégano",
           preco: 15,
         },
-      ],
-    },
-    {
-      id: "pastel-doce",
-      categoria: "pasteis",
-      nome: "Pastel Doce",
-      descricao: "Escolha o sabor no card antes de adicionar ao pedido.",
-      imagem: "./img/pastel/pastel2.png",
-      rotulo: "Pastel doce",
-      sabores: [
         {
+          tipo: "Doce",
           nome: "Banana com Doce de Leite",
           descricao: "Banana com doce de leite",
           preco: 16,
         },
         {
+          tipo: "Doce",
           nome: "Romeu e Julieta",
           descricao: "Queijo com goiabada",
           preco: 15,
         },
         {
+          tipo: "Doce",
           nome: "Chocolate Branco",
           descricao: "Recheio cremoso de chocolate branco",
           preco: 16,
         },
         {
+          tipo: "Doce",
           nome: "Chocolate Preto",
           descricao: "Recheio cremoso de chocolate preto",
           preco: 16,
-        },
+        }
       ],
     },
-
+  
     {
       id: "combo-espetacular",
       categoria: "combo",
@@ -849,10 +854,10 @@ function toggleCashFields() {
                   type="button"
                   class="custom-select__option ${index === 0 ? "is-selected" : ""}"
                   data-value="${sabor.nome}"
-                  data-label="${sabor.nome} — ${formatPrice(sabor.preco)}"
+                  data-label="(${sabor.tipo}) ${sabor.nome} — ${formatPrice(sabor.preco)}"
                   aria-selected="${index === 0 ? "true" : "false"}"
                 >
-                  ${sabor.nome} — ${formatPrice(sabor.preco)}
+                  (${sabor.tipo}) ${sabor.nome} — ${formatPrice(sabor.preco)}
                 </button>
               `,
             )
