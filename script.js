@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
       id: "bacon",
       categoria: "salgadas",
       nome: "Bacon",
-      descricao: "Bacon, mussarela e tomate",
+      descricao: "Bacon e mussarela",
       preco: 50,
       imagem: "./img/pizzas/bacon.png",
     },
@@ -93,7 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
       nome: "Pepperoni",
       descricao: "Pepperoni e mussarela",
       preco: 55,
-      imagem: "./img/pizzas/peperone.jpeg",
+      imagem: "./img/pizzas/pepperoni.png",
     },
 
     {
@@ -102,7 +102,7 @@ document.addEventListener("DOMContentLoaded", () => {
       nome: "Lombinho com Abacaxi",
       descricao: "Lombinho, mussarela e abacaxi",
       preco: 50,
-      imagem: "./img/pizzas/lombinhoeabacaxi.jpeg",
+      imagem: "./img/pizzas/lombinhoeabacaxi.png",
     },
     {
       id: "quatro-queijos",
@@ -118,7 +118,7 @@ document.addEventListener("DOMContentLoaded", () => {
       nome: "Bolonhesa",
       descricao: "Molho bolonhesa e mussarela",
       preco: 50,
-      imagem: "./img/pizzas/bolonhesa.jpeg",
+      imagem: "./img/pizzas/bolonhesa.png",
     },
     {
       id: "vegetariana",
