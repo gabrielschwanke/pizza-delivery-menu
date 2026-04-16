@@ -16,20 +16,20 @@ document.addEventListener("DOMContentLoaded", () => {
       id: "iscas-fritas",
       categoria: "salgadas",
       nome: "Iscas Fritas",
-      descricao:
-        "Iscas com fritas carne de rês, molho especial mussarela e fritas",
+      descricao: "O pedido favorito da Venezza! Iscas suculentas de carne de rês selecionada, preparadas na chapa e cobertas com uma camada generosa de muçarela derretida. Acompanha batatas fritas crocantes por fora e macias por dentro, finalizadas com o nosso exclusivo molho especial da casa.",
       preco: 60,
       imagem: "./img/pizzas/pizzafritas.png",
+      destaque:true,
     },
 
     {
       id: "bauru",
       categoria: "salgadas",
       nome: "Bauru",
-      descricao:
-        "A combinação perfeita que conquistou o Sul. Molho especial da casa, alcatra picadinha, presunto, muçarela, tomate e bacon, assados no ponto certo. Acompanha alface fresca para dar o toque final do Bauru tradicional.",
+      descricao: "A combinação perfeita que conquistou o Sul. Molho especial da casa, alcatra picadinha, presunto, muçarela, tomate e bacon, assados no ponto certo. Acompanha alface fresca para dar o toque final do Bauru tradicional.",
       preco: 75,
       imagem: "./img/pizzas/pizzabauru.png",
+      destaque: true,
     },
 
     {
@@ -1009,8 +1009,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const isPizzaItem = isPizza(item);
 
+        const badgeHtml = item.destaque
+          ? `<span class="badge-destaque">Mais Pedida</span>`
+          : "";
+
         return `
         <article class="menu-card">
+        <div style="position: relative;"> ${badgeHtml}
           <img
             src="${item.imagem}"
             alt="${getItemAlt(item)}"

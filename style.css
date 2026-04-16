@@ -439,7 +439,7 @@ button {
 
 .menu-card__tag {
   width: fit-content;
-  padding: 6px 10px;
+  padding: 1px 10px;
   border-radius: 999px;
   color: var(--gold-light);
   font-size: 0.8rem;
@@ -453,6 +453,7 @@ button {
   justify-content: space-between;
   align-items: start;
   gap: 12px;
+  margin-top: 12px;
 }
 
 .menu-card h3 {
@@ -840,6 +841,29 @@ button {
 .menu-card__flavor-price {
   margin-top: 8px;
   font-weight: 700;
+}
+
+.menu-card__image-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px 8px 0 0; /* Ajuste conforme o arredondamento do seu card */
+}
+
+.badge-destaque {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: linear-gradient(135deg, #FFD700, #DAA520);
+    color: #2c2c2c;
+    padding: 5px 12px;
+    font-size: 10px;
+    font-weight: 900;
+    text-transform: uppercase;
+    border-radius: 50px;
+    z-index: 2;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    border: 1px solid rgba(255,255,255,0.4);
+    letter-spacing: 0.5px;
 }
 
 /* Responsive */
