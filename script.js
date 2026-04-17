@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
       id: "bauru",
       categoria: "salgadas",
       nome: "Bauru",
-      descricao: "A combinação perfeita que conquistou o Sul. Molho especial da casa, alcatra picadinha, presunto, muçarela, tomate e bacon, assados no ponto certo. Acompanha alface fresca para dar o toque final do Bauru tradicional.",
+      descricao: "A combinação perfeita que conquistou o Sul. Molho especial da casa, alcatra picadinha, presunto, mussarela, tomate e bacon, assados no ponto certo. Acompanha alface fresca para dar o toque final do Bauru tradicional.",
       preco: 75,
       imagem: "./img/pizzas/pizzabauru.png",
       destaque: true,
