@@ -7,38 +7,128 @@ document.addEventListener("DOMContentLoaded", () => {
     businessHours: "De segunda a segunda, das 20h às 00h.",
     address: "Rua Pereira Passos, 437 - Areal, Pelotas",
     deliveryAreas: "Centro e bairros próximos",
+    promoDays: [0, 1, 2, 3, 4, 5, 6],
+    promoFixedPrice: 29.9,
+    promoItems: [
+      "calabresa",
+      "mussarela",
+      "frango-catupiry",
+      "napolitana",
+      "romeu-julieta",
+    ],
     deliveryFee: 0, // ex.: 5 para R$ 5,00
     minOrder: 0, // ex.: 30 para pedido mínimo de R$ 30,00
   };
 
   const MENU = [
     {
+      id: "bauru-raiz",
+      categoria: "lanches",
+      nome: "Bauru Raiz",
+      descricao:
+        "Carne, bacon, presunto, queijo, ovo, salada, milho, molho especial e condimentos",
+      preco: 30,
+      imagem: "./img/lanches/baururaiz.png",
+    },
+    {
+      id: "x-4-queijos",
+      categoria: "lanches",
+      nome: "X 4 Queijos",
+      descricao:
+        "Carne na chapa, presunto, milho, ovo, salada, azeitona e uma combinação irresistível de queijos: mussarela, provolone, prato e parmesão.",
+      preco: 30,
+      imagem: "./img/lanches/lanche4queijos.png",
+    },
+    {
+      id: "bauru-venezza",
+      categoria: "lanches",
+      nome: "Bauru Venezza",
+      descricao:
+        "Alcatra suculenta, provolone derretido, cebola caramelizada, ovo, milho, salada e condimentos da casa.",
+      preco: 30,
+      imagem: "./img/lanches/bauruvenezza.png",
+    },
+    {
+      id: "x-coracao",
+      categoria: "lanches",
+      nome: "X Coração",
+      descricao:
+        "Coração de frango grelhado, presunto, queijo, milho, salada fresca e condimentos especiais.",
+      preco: 25,
+      imagem: "./img/lanches/xcoracao.png",
+    },
+    {
+      id: "x-tudao",
+      categoria: "lanches",
+      nome: "X Tudão",
+      descricao:
+        "Um verdadeiro exagero! Carne, bacon, coração de frango, calabresa, queijo, milho, salada e condimentos no pão macio.",
+      preco: 25,
+      imagem: "./img/lanches/xtudo.png",
+    },
+    {
+      id: "bauru-strogonoff",
+      categoria: "lanches",
+      nome: "Bauru Strogonoff",
+      descricao:
+        "Strogonoff de carne cremoso, queijo, champignons, batata palha, salada e pão macio.",
+      preco: 25,
+      imagem: "./img/lanches/baurustrogonoff.png",
+    },
+    {
+      id: "dog-especial",
+      categoria: "lanches",
+      nome: "Dog Especial",
+      descricao:
+        "Salsicha premium em rodelas, presunto, queijo, milho, ovo cozido, salada fresca, batata palha e nossos condimentos especiais.",
+      preco: 20,
+      imagem: "./img/lanches/dogespecial.png",
+    },
+    {
+      id: "x-calabresa",
+      categoria: "lanches",
+      nome: "X Calabresa",
+      descricao:
+        "Calabresa acebolada, ovo na chapa, milho, salada e condimentos da casa.",
+      preco: 20,
+      imagem: "./img/lanches/xcalabresa.jpeg",
+    },
+    {
+      id: "x-salada",
+      categoria: "lanches",
+      nome: "X Salada",
+      descricao:
+        "Hambúrguer Venezza, queijo, presunto, ovo, cebola, salada fresca e condimentos.",
+      preco: 20,
+      imagem: "./img/lanches/xsalada.jpeg",
+    },
+    {
       id: "iscas-fritas",
       categoria: "salgadas",
       nome: "Iscas Fritas",
-      descricao: "O pedido favorito da Venezza! Iscas suculentas de carne de rês selecionada, preparadas na chapa e cobertas com uma camada generosa de muçarela derretida. Acompanha batatas fritas crocantes por fora e macias por dentro, finalizadas com o nosso exclusivo molho especial da casa.",
+      descricao:
+        "O pedido favorito da Venezza! Iscas suculentas de carne de rês selecionada, preparadas na chapa e cobertas com uma camada generosa de muçarela derretida. Acompanha batatas fritas crocantes por fora e macias por dentro, finalizadas com o nosso exclusivo molho especial da casa.",
       preco: 60,
       imagem: "./img/pizzas/pizzafritas.png",
-      destaque:true,
+      destaque: true,
     },
 
     {
-      id: "bauru",
+      id: "quatro-queijos",
       categoria: "salgadas",
-      nome: "Bauru",
-      descricao: "A combinação perfeita que conquistou o Sul. Molho especial da casa, alcatra picadinha, presunto, mussarela, tomate e bacon, assados no ponto certo. Acompanha alface fresca para dar o toque final do Bauru tradicional.",
-      preco: 75,
-      imagem: "./img/pizzas/pizzabauru.png",
-      destaque: true,
+      nome: "4 Queijos",
+      descricao: "Mix selecionado de quatro queijos nobres, derretidos no ponto certo para criar uma textura única e um sabor inesquecível a cada fatia.",
+      preco: 50,
+      imagem: "./img/pizzas/4queijos.png",
     },
 
     {
       id: "calabresa",
       categoria: "salgadas",
       nome: "Calabresa",
-      descricao: "Mussarela, calabresa e cebola",
+      descricao: "Calabresa premium defumada, mussarela e cebola.",
       preco: 45,
-      imagem: "./img/pizzas/calabresa.png",
+      imagem: "./img/pizzas/calabresa.jpeg",
     },
     {
       id: "mussarela",
@@ -97,14 +187,6 @@ document.addEventListener("DOMContentLoaded", () => {
       preco: 40,
       imagem: "./img/pizzas/alhoeoleo.jpeg",
     },
-    {
-      id: "pepperoni",
-      categoria: "salgadas",
-      nome: "Pepperoni",
-      descricao: "Pepperoni e mussarela",
-      preco: 55,
-      imagem: "./img/pizzas/pepperoni.png",
-    },
 
     {
       id: "lombinho-abacaxi",
@@ -114,31 +196,16 @@ document.addEventListener("DOMContentLoaded", () => {
       preco: 50,
       imagem: "./img/pizzas/lombinhoeabacaxi.png",
     },
+
     {
-      id: "quatro-queijos",
-      categoria: "salgadas",
-      nome: "4 Queijos",
-      descricao: "Mix especial de queijos",
-      preco: 50,
-      imagem: "./img/pizzas/4queijos.png",
+      id: "romeu-julieta",
+      categoria: "doces",
+      nome: "Romeu e Julieta",
+      descricao: "Queijo com goiabada",
+      preco: 40,
+      imagem: "./img/pizzas/romeuejulieta.png",
     },
-    {
-      id: "bolonhesa",
-      categoria: "salgadas",
-      nome: "Bolonhesa",
-      descricao: "Molho bolonhesa e mussarela",
-      preco: 50,
-      imagem: "./img/pizzas/bolonhesa.png",
-    },
-    {
-      id: "vegetariana",
-      categoria: "salgadas",
-      nome: "Vegetariana",
-      descricao:
-        "Brócolis, champions, ervilha, milho, molho especial e mussarela",
-      preco: 55,
-      imagem: "./img/pizzas/vegetariana.jpeg",
-    },
+
     {
       id: "sonho-de-valsa",
       categoria: "doces",
@@ -172,23 +239,7 @@ document.addEventListener("DOMContentLoaded", () => {
       preco: 60,
       imagem: "./img/pizzas/banoffee.jpeg",
     },
-    {
-      id: "romeu-julieta",
-      categoria: "doces",
-      nome: "Romeu e Julieta",
-      descricao: "Queijo com goiabada",
-      preco: 40,
-      imagem: "./img/pizzas/romeuejulieta.png",
-    },
-    {
-      id: "california",
-      categoria: "doces",
-      nome: "Califórnia",
-      descricao:
-        "Pêssego, figo, abacaxi, catupiry e mussarela, combinação doce especial",
-      preco: 55,
-      imagem: "./img/pizzas/california.jpeg",
-    },
+
 
     {
       id: "esfiha-calabresa",
@@ -322,8 +373,9 @@ document.addEventListener("DOMContentLoaded", () => {
     {
       id: "pastel-salgado",
       categoria: "pasteis",
-      nome: "",
+      nome: "Pastel Especial",
       descricao: "Escolha o sabor no card antes de adicionar ao pedido.",
+      preco: 15,
       imagem: "./img/pastel/pastel2.png",
       rotulo: "Pastéis Salgados e Doces",
       sabores: [
@@ -433,7 +485,7 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const state = {
-    currentCategory: "salgadas",
+    currentCategory: "lanches",
     cart: getStoredCart(),
     toastTimer: null,
   };
@@ -466,6 +518,17 @@ document.addEventListener("DOMContentLoaded", () => {
     toast: document.getElementById("toast"),
     currentYear: document.getElementById("currentYear"),
   };
+
+  function getEffectivePrice(item) {
+    const today = new Date().getDay();
+    const isPromoDay = CONFIG.promoDays.includes(today);
+    const isEligible = CONFIG.promoItems.includes(item.id);
+
+    if (isPromoDay && isEligible) {
+      return CONFIG.promoFixedPrice;
+    }
+    return item.preco;
+  }
 
   init();
 
@@ -719,6 +782,10 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function formatPrice(value) {
+    if (typeof value !== "number") {
+      return "Consulte";
+    }
+
     return value.toLocaleString("pt-BR", {
       style: "currency",
       currency: "BRL",
@@ -919,6 +986,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "esfihas-doces": "Esfiha doce",
       pasteis: "Pastel",
       combo: "combo",
+      lanches: "lanches",
     };
 
     return labels[item.categoria] || "Item do cardápio";
@@ -1004,50 +1072,62 @@ document.addEventListener("DOMContentLoaded", () => {
 
     elements.menuGrid.innerHTML = filteredItems
       .map((item) => {
-        const hasFlavors =
-          Array.isArray(item.sabores) && item.sabores.length > 0;
+        // 1. Lógica de Preço e Promoção (Nova)
+        const currentPrice = getEffectivePrice(item);
+        const isPromoActive = currentPrice < item.preco;
 
-        const isPizzaItem = isPizza(item);
-
-        const badgeHtml = item.destaque
+        // 2. Lógica dos Badges (Atualizada)
+        const badgeDestaque = item.destaque
           ? `<span class="badge-destaque">Mais Pedida</span>`
           : "";
+        const badgeOferta = isPromoActive
+          ? `<span class="badge-oferta">Oferta</span>`
+          : "";
+
+        // 3. Lógica do Preço Visível (Nova)
+        const priceDisplay = isPromoActive
+          ? `<div class="price-container">
+               <span class="price-old">${formatPrice(item.preco)}</span>
+               <span class="price-promo">${formatPrice(currentPrice)}</span>
+             </div>`
+          : `<span class="price">${formatPrice(item.preco)}</span>`;
+
+        // Constantes que você já tinha no código
+        const hasFlavors =
+          Array.isArray(item.sabores) && item.sabores.length > 0;
+        const isPizzaItem = isPizza(item);
 
         return `
         <article class="menu-card">
-        <div style="position: relative;"> ${badgeHtml}
-          <img
-            src="${item.imagem}"
-            alt="${getItemAlt(item)}"
-            class="menu-card__image"
-            loading="lazy"
-          />
+          <div style="position: relative;"> 
+            ${badgeDestaque} 
+            ${badgeOferta} <img
+              src="${item.imagem}"
+              alt="${getItemAlt(item)}"
+              class="menu-card__image"
+              loading="lazy"
+            />
 
-          <span class="menu-card__tag">
-            ${getCategoryLabel(item)}
-          </span>
+            <span class="menu-card__tag">
+              ${getCategoryLabel(item)}
+            </span>
 
-          <div class="menu-card__top">
-            <div>
-              <h3>${item.nome}</h3>
-              <p>${item.descricao}</p>
+            <div class="menu-card__top">
+              <div>
+                <h3>${item.nome}</h3>
+                <p>${item.descricao}</p>
+              </div>
+
+              ${priceDisplay} 
             </div>
 
-            ${
-              getItemPriceLabel(item)
-                ? `<span class="price">${getItemPriceLabel(item)}</span>`
-                : ""
-            }
-          </div>
+           ${hasFlavors ? renderProductFlavorCustomSelect(item) : ""}
+           ${isPizzaItem ? renderPizzaSecondFlavorCustomSelect(item, allPizzaFlavors) : ""}
 
-         ${hasFlavors ? renderProductFlavorCustomSelect(item) : ""}
-
-          ${isPizzaItem ? renderPizzaSecondFlavorCustomSelect(item, allPizzaFlavors) : ""}
-
-          <button class="btn btn--primary add-btn" data-id="${item.id}" type="button">
-            Adicionar ao pedido
-          </button>
-        </article>
+            <button class="btn btn--primary add-btn" data-id="${item.id}" type="button">
+              Adicionar ao pedido
+            </button>
+          </div> </article>
       `;
       })
       .join("");
@@ -1123,7 +1203,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function handleCategoryChange(event) {
-    const button = event.target.closest("[data-category]");
+    const button = event.target.closest(".filter-btn");
     if (!button) return;
 
     state.currentCategory = button.dataset.category;
@@ -1236,7 +1316,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let cartId = product.id;
     let cartName = getOrderItemName(product);
-    let cartPrice = product.preco;
+    let cartPrice = getEffectivePrice(product);
 
     if (isPizza(product) && secondFlavorId) {
       const secondPizza = getProductById(secondFlavorId);
@@ -1255,7 +1335,9 @@ document.addEventListener("DOMContentLoaded", () => {
           .join("-")}`;
 
         cartName = `Pizza 2 sabores - ${orderedFlavors[0].nome} / ${orderedFlavors[1].nome}`;
-        cartPrice = Math.max(product.preco, secondPizza.preco);
+        const preco1 = getEffectivePrice(product);
+        const preco2 = getEffectivePrice(secondPizza);
+        cartPrice = Math.max(preco1, preco2);
       }
     } else if (Array.isArray(product.sabores) && product.sabores.length > 0) {
       const selectedFlavor = getFlavorByName(
@@ -1267,7 +1349,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
       cartId = `${product.id}-${slugify(selectedFlavor.nome)}`;
       cartName = getOrderItemName(product, selectedFlavor);
-      cartPrice = selectedFlavor.preco;
+      cartPrice = getEffectivePrice({
+        ...product,
+        preco: selectedFlavor.preco,
+      });
     }
 
     const existingItem = state.cart.find((item) => item.id === cartId);

@@ -866,6 +866,38 @@ button {
     letter-spacing: 0.5px;
 }
 
+.price-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.price-old {
+  text-decoration: line-through;
+  color: #888;
+  font-size: 0.8rem;
+}
+
+.price-promo {
+  color: #e63946;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.badge-oferta {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #e63946;
+  color: white;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  z-index: 5;
+}
+
 /* Responsive */
 @media (max-width: 1080px) {
   .catalog,
