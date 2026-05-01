@@ -118,7 +118,7 @@ document.addEventListener("DOMContentLoaded", () => {
       categoria: "salgadas",
       nome: "4 Queijos",
       descricao: "Mix selecionado de quatro queijos nobres, derretidos no ponto certo para criar uma textura única e um sabor inesquecível a cada fatia.",
-      preco: 50,
+      preco: 60,
       imagem: "./img/pizzas/4queijos.png",
     },
 
@@ -143,7 +143,7 @@ document.addEventListener("DOMContentLoaded", () => {
       categoria: "salgadas",
       nome: "Coração",
       descricao: "Coraçãozinho, mussare e aquele molho especial da casa",
-      preco: 50,
+      preco: 60,
       imagem: "./img/pizzas/coracao.jpeg",
     },
     {
