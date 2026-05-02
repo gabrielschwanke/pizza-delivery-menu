@@ -8,13 +8,12 @@ document.addEventListener("DOMContentLoaded", () => {
     address: "Rua Pereira Passos, 437 - Areal, Pelotas",
     deliveryAreas: "Centro e bairros próximos",
     promoDays: [0, 1, 2, 3, 4, 5, 6],
-    promoFixedPrice: 29.9,
+    promoFixedPrice: 39.9,
     promoItems: [
       "calabresa",
       "mussarela",
       "frango-catupiry",
       "napolitana",
-      "romeu-julieta",
     ],
     deliveryFee: 0, // ex.: 5 para R$ 5,00
     minOrder: 0, // ex.: 30 para pedido mínimo de R$ 30,00
