@@ -9,12 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
     deliveryAreas: "Centro e bairros próximos",
     promoDays: [0, 1, 2, 3, 4, 5, 6],
     promoFixedPrice: 39.9,
-    promoItems: [
-      "calabresa",
-      "mussarela",
-      "frango-catupiry",
-      "napolitana",
-    ],
+    promoItems: ["calabresa", "mussarela", "frango-catupiry", "napolitana"],
     deliveryFee: 0, // ex.: 5 para R$ 5,00
     minOrder: 0, // ex.: 30 para pedido mínimo de R$ 30,00
   };
@@ -28,6 +23,15 @@ document.addEventListener("DOMContentLoaded", () => {
         "Carne, bacon, presunto, queijo, ovo, salada, milho, molho especial e condimentos",
       preco: 30,
       imagem: "./img/lanches/baururaiz.png",
+    },
+    {
+      id: "FranBacon",
+      categoria: "lanches",
+      nome: "FranBacon",
+      descricao:
+        "Frango suculento, bacon crocante + catupiry original e salada",
+      preco: 30,
+      imagem: "./img/lanches/franbacon.png",
     },
     {
       id: "x-4-queijos",
@@ -116,7 +120,8 @@ document.addEventListener("DOMContentLoaded", () => {
       id: "quatro-queijos",
       categoria: "salgadas",
       nome: "4 Queijos",
-      descricao: "Mix selecionado de quatro queijos nobres, derretidos no ponto certo para criar uma textura única e um sabor inesquecível a cada fatia.",
+      descricao:
+        "Mix selecionado de quatro queijos nobres, derretidos no ponto certo para criar uma textura única e um sabor inesquecível a cada fatia.",
       preco: 60,
       imagem: "./img/pizzas/4queijos.png",
     },
@@ -134,7 +139,7 @@ document.addEventListener("DOMContentLoaded", () => {
       categoria: "salgadas",
       nome: "Mussarela",
       descricao: "Mussarela e orégano",
-      preco: 40,
+      preco: 45,
       imagem: "./img/pizzas/mussarela.jpeg",
     },
     {
@@ -144,6 +149,14 @@ document.addEventListener("DOMContentLoaded", () => {
       descricao: "Coraçãozinho, mussare e aquele molho especial da casa",
       preco: 60,
       imagem: "./img/pizzas/coracao.jpeg",
+    },
+    {
+      id: "coracao-venezza",
+      categoria: "salgadas",
+      nome: "Coração Venezza",
+      descricao: "Coração de frango, bacon, tomate e mussarela.",
+      preco: 60,
+      imagem: "./img/pizzas/coracao-venezza.jpeg",
     },
     {
       id: "bacon",
@@ -165,8 +178,7 @@ document.addEventListener("DOMContentLoaded", () => {
       id: "strogonoff",
       categoria: "salgadas",
       nome: "Strogonoff de Carne",
-      descricao:
-        "Molho especial da casa, mussarela, frango, creme de leite e batata palha",
+      descricao: "Carne, creme de leite, molho, champignon e batata palha.",
       preco: 60,
       imagem: "./img/pizzas/strogonoff.jpeg",
     },
@@ -188,12 +200,32 @@ document.addEventListener("DOMContentLoaded", () => {
     },
 
     {
-      id: "lombinho-abacaxi",
+      id: "lombinho-venezza",
       categoria: "salgadas",
-      nome: "Lombinho com Abacaxi",
-      descricao: "Lombinho, mussarela e abacaxi",
-      preco: 50,
+      nome: "Lombinho Venezza",
+      descricao: "Lombinho suíno ao molho barbecue, bacon, cebola caramelizada e catupiry.",
+      preco: 65,
       imagem: "./img/pizzas/lombinhoeabacaxi.png",
+    },
+
+    {
+      id: "venezza",
+      categoria: "salgadas",
+      nome: "Venezza",
+      descricao:
+        "Molho, queijo mussarela e provolone, bacon, cebola caramelizada, carne picada e azeitonas..",
+      preco: 65,
+      imagem: "./img/pizzas/venezza.png",
+    },
+
+    {
+      id: "portuguesa",
+      categoria: "salgadas",
+      nome: "Portuguesa",
+      descricao:
+        "Presunto, queijo mussarela, tomate, cebola, pimentão e ovo cozido",
+      preco: 50,
+      imagem: "./img/pizzas/venezza.png",
     },
 
     {
@@ -238,7 +270,6 @@ document.addEventListener("DOMContentLoaded", () => {
       preco: 60,
       imagem: "./img/pizzas/banoffee.jpeg",
     },
-
 
     {
       id: "esfiha-calabresa",
@@ -410,6 +441,12 @@ document.addEventListener("DOMContentLoaded", () => {
         },
         {
           tipo: "Salgado",
+          nome: "Strogonoff de Carne",
+          descricao: "Carne, batata palha e creme de leite",
+          preco: 19,
+        },
+        {
+          tipo: "Salgado",
           nome: "Calabresa",
           descricao: "Calabresa e queijo",
           preco: 15,
@@ -425,6 +462,12 @@ document.addEventListener("DOMContentLoaded", () => {
           nome: "4 Queijos",
           descricao: "Mussarela, catupiry, provolone e cheddar",
           preco: 17,
+        },
+        {
+          tipo: "Salgado",
+          nome: "Venezza",
+          descricao: "Carne picada, provolone, mussarela, bacon e azeitona",
+          preco: 19,
         },
         {
           tipo: "Salgado",
