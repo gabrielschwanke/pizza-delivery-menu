@@ -2,10 +2,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const CONFIG = {
     storeName: "Venezza Delivery",
     slogan: "Sabor que conquista!",
-    whatsappNumber: "5553991142090", // coloque aqui o número real com DDI + DDD
-    whatsappDisplay: "(53) 99114-2090",
+    whatsappNumber: "5559999999999", // coloque aqui o número real com DDI + DDD
+    whatsappDisplay: "(53) 99999-9999",
     businessHours: "De segunda a segunda, das 20h às 00h.",
-    address: "Rua Pereira Passos, 437 - Areal, Pelotas",
+    address: "Rua Passos Pereira, 437 - Areal, Pelotas",
     deliveryAreas: "Centro e bairros próximos",
     promoDays: [0, 1, 2, 3, 4, 5, 6],
     promoFixedPrice: 39.9,
@@ -15,96 +15,6 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const MENU = [
-    {
-      id: "bauru-raiz",
-      categoria: "lanches",
-      nome: "Bauru Raiz",
-      descricao:
-        "Carne, bacon, presunto, queijo, ovo, salada, milho, molho especial e condimentos",
-      preco: 30,
-      imagem: "./img/lanches/baururaiz.png",
-    },
-    {
-      id: "FranBacon",
-      categoria: "lanches",
-      nome: "FranBacon",
-      descricao:
-        "Frango suculento, bacon crocante + catupiry original e salada",
-      preco: 30,
-      imagem: "./img/lanches/franbacon.png",
-    },
-    {
-      id: "x-4-queijos",
-      categoria: "lanches",
-      nome: "X 4 Queijos",
-      descricao:
-        "Carne na chapa, presunto, milho, ovo, salada, azeitona e uma combinação irresistível de queijos: mussarela, provolone, prato e parmesão.",
-      preco: 30,
-      imagem: "./img/lanches/lanche4queijos.png",
-    },
-    {
-      id: "bauru-venezza",
-      categoria: "lanches",
-      nome: "Bauru Venezza",
-      descricao:
-        "Alcatra suculenta, provolone derretido, cebola caramelizada, ovo, milho, salada e condimentos da casa.",
-      preco: 30,
-      imagem: "./img/lanches/bauruvenezza.png",
-    },
-    {
-      id: "x-coracao",
-      categoria: "lanches",
-      nome: "X Coração",
-      descricao:
-        "Coração de frango grelhado, presunto, queijo, milho, salada fresca e condimentos especiais.",
-      preco: 25,
-      imagem: "./img/lanches/xcoracao.png",
-    },
-    {
-      id: "x-tudao",
-      categoria: "lanches",
-      nome: "X Tudão",
-      descricao:
-        "Um verdadeiro exagero! Carne, bacon, coração de frango, calabresa, queijo, milho, salada e condimentos no pão macio.",
-      preco: 25,
-      imagem: "./img/lanches/xtudo.png",
-    },
-    {
-      id: "bauru-strogonoff",
-      categoria: "lanches",
-      nome: "Bauru Strogonoff",
-      descricao:
-        "Strogonoff de carne cremoso, queijo, champignons, batata palha, salada e pão macio.",
-      preco: 25,
-      imagem: "./img/lanches/baurustrogonoff.png",
-    },
-    {
-      id: "dog-especial",
-      categoria: "lanches",
-      nome: "Dog Especial",
-      descricao:
-        "Salsicha premium em rodelas, presunto, queijo, milho, ovo cozido, salada fresca, batata palha e nossos condimentos especiais.",
-      preco: 20,
-      imagem: "./img/lanches/dogespecial.png",
-    },
-    {
-      id: "x-calabresa",
-      categoria: "lanches",
-      nome: "X Calabresa",
-      descricao:
-        "Calabresa acebolada, ovo na chapa, milho, salada e condimentos da casa.",
-      preco: 20,
-      imagem: "./img/lanches/xcalabresa.jpeg",
-    },
-    {
-      id: "x-salada",
-      categoria: "lanches",
-      nome: "X Salada",
-      descricao:
-        "Hambúrguer Venezza, queijo, presunto, ovo, cebola, salada fresca e condimentos.",
-      preco: 20,
-      imagem: "./img/lanches/xsalada.jpeg",
-    },
     {
       id: "iscas-fritas",
       categoria: "salgadas",
@@ -151,14 +61,6 @@ document.addEventListener("DOMContentLoaded", () => {
       imagem: "./img/pizzas/coracao.jpeg",
     },
     {
-      id: "coracao-venezza",
-      categoria: "salgadas",
-      nome: "Coração Venezza",
-      descricao: "Coração de frango, bacon, tomate e mussarela.",
-      preco: 60,
-      imagem: "./img/pizzas/coracao-venezza.jpeg",
-    },
-    {
       id: "bacon",
       categoria: "salgadas",
       nome: "Bacon",
@@ -197,35 +99,6 @@ document.addEventListener("DOMContentLoaded", () => {
       descricao: "Alho temperado e toque de orégano",
       preco: 40,
       imagem: "./img/pizzas/alhoeoleo.jpeg",
-    },
-
-    {
-      id: "lombinho-venezza",
-      categoria: "salgadas",
-      nome: "Lombinho Venezza",
-      descricao: "Lombinho suíno ao molho barbecue, bacon, cebola caramelizada e catupiry.",
-      preco: 65,
-      imagem: "./img/pizzas/lombinhoeabacaxi.png",
-    },
-
-    {
-      id: "venezza",
-      categoria: "salgadas",
-      nome: "Venezza",
-      descricao:
-        "Molho, queijo mussarela e provolone, bacon, cebola caramelizada, carne picada e azeitonas..",
-      preco: 65,
-      imagem: "./img/pizzas/venezza.png",
-    },
-
-    {
-      id: "portuguesa",
-      categoria: "salgadas",
-      nome: "Portuguesa",
-      descricao:
-        "Presunto, queijo mussarela, tomate, cebola, pimentão e ovo cozido",
-      preco: 50,
-      imagem: "./img/pizzas/venezza.png",
     },
 
     {
