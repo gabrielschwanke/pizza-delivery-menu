@@ -527,7 +527,7 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const state = {
-    currentCategory: "lanches",
+    currentCategory: "salgadas",
     cart: getStoredCart(),
     toastTimer: null,
   };
