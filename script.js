@@ -384,6 +384,44 @@ document.addEventListener("DOMContentLoaded", () => {
       preco: 80,
       imagem: "./img/combo.png",
     },
+
+    // BEBIDAS
+// BEBIDAS
+{
+  id: "coca-cola-lata",
+  categoria: "bebidas",
+  nome: "Coca-Cola Lata 350ml",
+  preco: 5.99,
+  imagem: "./img/bebidas/coca-lata.jfif",
+},
+{
+  id: "pepsi-lata",
+  categoria: "bebidas",
+  nome: "Pepsi Lata 350ml",
+  preco: 5.99,
+  imagem: "./img/bebidas/pepsi-lata.jpg",
+},
+{
+  id: "sprite-lata",
+  categoria: "bebidas",
+  nome: "Sprite Lata 350ml",
+  preco: 5.99,
+  imagem: "./img/bebidas/sprite-lata.jfif",
+},
+{
+  id: "coca-cola-2l",
+  categoria: "bebidas",
+  nome: "Coca-Cola 2L",
+  preco: 11.50,
+  imagem: "./img/bebidas/coca-2l.png",
+},
+{
+  id: "pepsi-2l",
+  categoria: "bebidas",
+  nome: "Pepsi 2L",
+  preco: 11.50,
+  imagem: "./img/bebidas/pepsi-2l.png",
+},
   ];
 
   const PIZZA_CATEGORIES = ["salgadas", "doces"];
@@ -902,6 +940,7 @@ document.addEventListener("DOMContentLoaded", () => {
       pasteis: "Pastel",
       combo: "combo",
       lanches: "lanches",
+      bebidas: "Bebidas",
     };
 
     return labels[item.categoria] || "Item do cardápio";
