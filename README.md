@@ -7,7 +7,7 @@ This project was designed to improve the customer ordering experience through a 
 
 ## Live Demo
 
-[View Online](https://pizza-delivery-menu.venezzadelivery.workers.dev)
+[View Online](https://pizza-delivery-menu.projetos-web.workers.dev)
 
 ---
 
