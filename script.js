@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   const CONFIG = {
-    storeName: "Venezza Delivery",
+    storeName: "Verona Delivery",
     slogan: "Sabor que conquista!",
     whatsappNumber: "5559999999999", // coloque aqui o número real com DDI + DDD
     whatsappDisplay: "(53) 99999-9999",
@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
       categoria: "salgadas",
       nome: "Iscas Fritas",
       descricao:
-        "O pedido favorito da Venezza! Iscas suculentas de carne de rês selecionada, preparadas na chapa e cobertas com uma camada generosa de muçarela derretida. Acompanha batatas fritas crocantes por fora e macias por dentro, finalizadas com o nosso exclusivo molho especial da casa.",
+        "O pedido favorito da Verona! Iscas suculentas de carne de rês selecionada, preparadas na chapa e cobertas com uma camada generosa de muçarela derretida. Acompanha batatas fritas crocantes por fora e macias por dentro, finalizadas com o nosso exclusivo molho especial da casa.",
       preco: 60,
       imagem: "./img/pizzas/pizzafritas.png",
       destaque: true,
@@ -427,15 +427,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const PIZZA_CATEGORIES = ["salgadas", "doces"];
 
   const STORAGE_KEYS = {
-    cart: "venezza-cart",
-    name: "venezza-name",
-    address: "venezza-address",
-    orderType: "venezza-order-type",
-    payment: "venezza-payment",
-    needChange: "venezza-need-change",
-    changeAmount: "venezza-change-amount",
-    notes: "venezza-notes",
-  };
+  cart: "delivery-menu-cart",
+  name: "delivery-menu-name",
+  address: "delivery-menu-address",
+  orderType: "delivery-menu-order-type",
+  payment: "delivery-menu-payment",
+  needChange: "delivery-menu-need-change",
+  changeAmount: "delivery-menu-change-amount",
+  notes: "delivery-menu-notes",
+};
 
   const state = {
     currentCategory: "salgadas",
