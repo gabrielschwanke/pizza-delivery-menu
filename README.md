@@ -16,12 +16,13 @@ This project was designed to improve the customer ordering experience through a 
 ### Hero Section
 ![Hero Preview](./assets/readme/hero-preview.png)
 
-### Mobile Experience
-![Mobile Preview](./assets/readme/mobile-preview.jpeg)
+<h3>Mobile Experience</h3>
 
+<img src="./assets/readme/mobile-preview.jpeg" alt="Mobile Preview" width="250">
 
-### Menu Experience
-![Menu Preview](./assets/readme/menu-preview.jpeg)
+<h3>Menu Experience</h3>
+
+<img src="./assets/readme/menu-preview.jpeg" alt="Menu Preview" width="250">
 
 ---
 
