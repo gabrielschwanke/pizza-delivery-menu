@@ -1,4 +1,4 @@
-# Venezza Delivery
+# Verona Delivery
 
 A production-oriented online menu and ordering interface built for a real local delivery business.  
 This project was designed to improve the customer ordering experience through a responsive, visually polished, and mobile-first website that showcases pizzas, esfihas, and pastries while streamlining orders through WhatsApp.
@@ -16,12 +16,12 @@ This project was designed to improve the customer ordering experience through a 
 ### Hero Section
 ![Hero Preview](./assets/readme/hero-preview.png)
 
-### Menu Experience
-![Menu Preview](./assets/readme/menu-preview.png)
-
 ### Mobile Experience
-![Mobile Preview](./assets/readme/mobile-preview.png)
+![Mobile Preview](./assets/readme/mobile-preview.jpeg)
 
+
+### Menu Experience
+![Menu Preview](./assets/readme/menu-preview.jpeg)
 
 ---
 
