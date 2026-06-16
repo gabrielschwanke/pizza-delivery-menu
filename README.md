@@ -28,7 +28,7 @@ This project was designed to improve the customer ordering experience through a 
 
 ## Overview
 
-**Venezza Delivery** is a real-world front-end project developed for a local food delivery business.  
+**Verona Delivery** is a real-world front-end project developed for a local food delivery business.  
 Instead of building a generic showcase page, the goal was to create a practical digital ordering experience focused on usability, product presentation, and business value.
 
 The website allows customers to browse a structured menu, explore product categories, view product images, add items to a cart, fill in order details, and complete the checkout flow through WhatsApp.
