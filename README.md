@@ -120,25 +120,28 @@ The interface was shaped around a few core priorities:
 ## Project Structure
 
 ```bash
-├── index.html
-├── style.css
-├── script.js
-├── img/
-│   ├── logo.png
-│   ├── favicon.png
-│   ├── bannerhero.png
-│   ├── pizzas/
-│   ├── esfihas/
-│   └── pasteis/
+pizza-delivery-menu/
+│
 ├── assets/
+│   ├── css/
+│   │   ├── style.css
+│   │   └── custom-select.css
+│   ├── js/
+│   │   ├── script.js
+│   │   └── custom-select.js
+│   ├── img/
+│   │   ├── logo.png
+│   │   ├── favicon.png
+│   │   ├── bannerhero.png
+│   │   ├── pizzas/
+│   │   ├── esfihas/
+│   │   └── pasteis/
 │   └── readme/
 │       ├── hero-preview.png
-│       ├── menu-preview.png
-│       ├── mobile-preview.png
-│       ├── desktop-home.png
-│       ├── product-cards.png
-│       ├── cart-order.png
-│       └── mobile-layout.png
+│       └── ...
+│
+├── index.html
+├── .gitignore
 └── README.md
 
 ``` 
