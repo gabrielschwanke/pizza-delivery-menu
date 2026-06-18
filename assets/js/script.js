@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
       descricao:
         "O pedido favorito da Verona! Iscas suculentas de carne de rês selecionada, preparadas na chapa e cobertas com uma camada generosa de muçarela derretida. Acompanha batatas fritas crocantes por fora e macias por dentro, finalizadas com o nosso exclusivo molho especial da casa.",
       preco: 60,
-      imagem: "./img/pizzas/pizzafritas.png",
+      imagem: "assets/img/pizzas/pizzafrita.png",
       destaque: true,
     },
 
@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
       descricao:
         "Mix selecionado de quatro queijos nobres, derretidos no ponto certo para criar uma textura única e um sabor inesquecível a cada fatia.",
       preco: 60,
-      imagem: "./img/pizzas/4queijos.png",
+      imagem: "assets/img/pizzas/4queijos.png",
     },
 
     {
@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
       nome: "Calabresa",
       descricao: "Calabresa premium defumada, mussarela e cebola.",
       preco: 45,
-      imagem: "./img/pizzas/calabresa.jpeg",
+      imagem: "assets/img/pizzas/calabresa.jpeg",
     },
     {
       id: "mussarela",
@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
       nome: "Mussarela",
       descricao: "Mussarela e orégano",
       preco: 45,
-      imagem: "./img/pizzas/mussarela.jpeg",
+      imagem: "assets/img/pizzas/mussarela.jpeg",
     },
     {
       id: "coracao",
@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
       nome: "Coração",
       descricao: "Coraçãozinho, mussare e aquele molho especial da casa",
       preco: 60,
-      imagem: "./img/pizzas/coracao.jpeg",
+      imagem: "assets/img/pizzas/coracao.jpeg",
     },
     {
       id: "bacon",
@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
       nome: "Bacon",
       descricao: "Bacon e mussarela",
       preco: 50,
-      imagem: "./img/pizzas/bacon.png",
+      imagem: "assets/img/pizzas/bacon.png",
     },
     {
       id: "napolitana",
@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
       nome: "Napolitana",
       descricao: "Presunto, mussarela, tomate e catupiry",
       preco: 55,
-      imagem: "./img/pizzas/napolitana.png",
+      imagem: "assets/img/pizzas/napolitana.png",
     },
     {
       id: "strogonoff",
@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
       nome: "Strogonoff de Carne",
       descricao: "Carne, creme de leite, molho, champignon e batata palha.",
       preco: 60,
-      imagem: "./img/pizzas/strogonoff.jpeg",
+      imagem: "assets/img/pizzas/strogonoff.jpeg",
     },
     {
       id: "frango-catupiry",
@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
       nome: "Frango com Catupiry",
       descricao: "Frango desfiado com catupiry",
       preco: 50,
-      imagem: "./img/pizzas/frangocatupiry.png",
+      imagem: "assets/img/pizzas/frangocatupiry.png",
     },
     {
       id: "alho-oleo",
@@ -98,7 +98,7 @@ document.addEventListener("DOMContentLoaded", () => {
       nome: "Alho e Óleo",
       descricao: "Alho temperado e toque de orégano",
       preco: 40,
-      imagem: "./img/pizzas/alhoeoleo.jpeg",
+      imagem: "assets/img/pizzas/alhoeoleo.jpeg",
     },
 
     {
@@ -107,7 +107,7 @@ document.addEventListener("DOMContentLoaded", () => {
       nome: "Romeu e Julieta",
       descricao: "Queijo com goiabada",
       preco: 40,
-      imagem: "./img/pizzas/romeuejulieta.png",
+      imagem: "assets/img/pizzas/romeuejulieta.png",
     },
 
     {
@@ -116,7 +116,7 @@ document.addEventListener("DOMContentLoaded", () => {
       nome: "Sonho de Valsa",
       descricao: "Chocolate e bombom Sonho de Valsa",
       preco: 50,
-      imagem: "./img/pizzas/pizzasonhodevalsa.png",
+      imagem: "assets/img/pizzas/pizzasonhodevalsa.png",
     },
     {
       id: "ouro-branco",
@@ -124,7 +124,7 @@ document.addEventListener("DOMContentLoaded", () => {
       nome: "Ouro Branco",
       descricao: "Chocolate e bombom Ouro Branco",
       preco: 50,
-      imagem: "./img/pizzas/ouro-branco.jpeg",
+      imagem: "assets/img/pizzas/ouro-branco.jpeg",
     },
     {
       id: "banana-nevada",
@@ -133,7 +133,7 @@ document.addEventListener("DOMContentLoaded", () => {
       descricao:
         "Creme de ninho, banana e leite condensado com toque doce da casa",
       preco: 50,
-      imagem: "./img/pizzas/banana-nevada.jpeg",
+      imagem: "assets/img/pizzas/banana-nevada.jpeg",
     },
     {
       id: "banoffee",
@@ -141,7 +141,7 @@ document.addEventListener("DOMContentLoaded", () => {
       nome: "Banoffee",
       descricao: "Banana, doce e cobertura cremosa",
       preco: 60,
-      imagem: "./img/pizzas/banoffee.jpeg",
+      imagem: "assets/img/pizzas/banoffee.jpeg",
     },
 
     {
@@ -150,7 +150,7 @@ document.addEventListener("DOMContentLoaded", () => {
       nome: "Calabresa",
       descricao: "Esfiha recheada com calabresa e tempero especial",
       preco: 8,
-      imagem: "./img/esfihas/esfihacalabresa.png",
+      imagem: "assets/img/esfihas/esfihacalabresa.png",
     },
     {
       id: "esfiha-frango-requeijao",
@@ -158,7 +158,7 @@ document.addEventListener("DOMContentLoaded", () => {
       nome: "Frango com Requeijão",
       descricao: "Esfiha recheada com frango desfiado e requeijão",
       preco: 8,
-      imagem: "./img/esfihas/frangorequeijao.png",
+      imagem: "assets/img/esfihas/frangorequeijao.png",
     },
     {
       id: "esfiha-carne-moida",
@@ -166,7 +166,7 @@ document.addEventListener("DOMContentLoaded", () => {
       nome: "Tradicional Carne Moída",
       descricao: "Esfiha tradicional recheada com carne moída temperada",
       preco: 8,
-      imagem: "./img/esfihas/esfihacarne.png",
+      imagem: "assets/img/esfihas/esfihacarne.png",
     },
     {
       id: "esfiha-peperoni",
@@ -174,7 +174,7 @@ document.addEventListener("DOMContentLoaded", () => {
       nome: "Peperoni",
       descricao: "Esfiha recheada com peperoni e toque especial da casa",
       preco: 8,
-      imagem: "./img/esfihas/esfihapeperone.png",
+      imagem: "assets/img/esfihas/esfihapeperone.png",
     },
     {
       id: "esfiha-4-queijos",
@@ -182,7 +182,7 @@ document.addEventListener("DOMContentLoaded", () => {
       nome: "4 Queijos",
       descricao: "Esfiha recheada com mix especial de quatro queijos",
       preco: 8,
-      imagem: "./img/esfihas/esfiha4queijos.png",
+      imagem: "assets/img/esfihas/esfiha4queijos.png",
     },
     {
       id: "esfiha-bacon",
@@ -190,7 +190,7 @@ document.addEventListener("DOMContentLoaded", () => {
       nome: "Bacon",
       descricao: "Esfiha recheada com bacon e queijo",
       preco: 8,
-      imagem: "./img/esfihas/esfihabacon.png",
+      imagem: "assets/img/esfihas/esfihabacon.png",
     },
     {
       id: "esfiha-brocolis-bacon-catupiry",
@@ -198,7 +198,7 @@ document.addEventListener("DOMContentLoaded", () => {
       nome: "Brócolis c/ Bacon e Catupiry",
       descricao: "Esfiha com brócolis, bacon e catupiry",
       preco: 8,
-      imagem: "./img/esfihas/esfihabrocolis.png",
+      imagem: "assets/img/esfihas/esfihabrocolis.png",
     },
     {
       id: "esfiha-presunto-queijo",
@@ -206,7 +206,7 @@ document.addEventListener("DOMContentLoaded", () => {
       nome: "Presunto e Queijo",
       descricao: "Esfiha recheada com presunto e queijo",
       preco: 8,
-      imagem: "./img/esfihas/esfihapresunto.png",
+      imagem: "assets/img/esfihas/esfihapresunto.png",
     },
     {
       id: "esfiha-doritos-cheddar",
@@ -214,7 +214,7 @@ document.addEventListener("DOMContentLoaded", () => {
       nome: "Doritos e Cheddar",
       descricao: "Esfiha com cheddar cremoso e crocância especial",
       preco: 8,
-      imagem: "./img/esfihas/esfihadoritos.png",
+      imagem: "assets/img/esfihas/esfihadoritos.png",
     },
     {
       id: "esfiha-costela",
@@ -222,7 +222,7 @@ document.addEventListener("DOMContentLoaded", () => {
       nome: "Costela",
       descricao: "Esfiha recheada com costela desfiada e temperada",
       preco: 8,
-      imagem: "./img/esfihas/esfihacostela.png",
+      imagem: "assets/img/esfihas/esfihacostela.png",
     },
     {
       id: "esfiha-ouro-branco",
@@ -230,7 +230,7 @@ document.addEventListener("DOMContentLoaded", () => {
       nome: "Ouro Branco",
       descricao: "Esfiha doce com chocolate e bombom Ouro Branco",
       preco: 8,
-      imagem: "./img/esfihas/esfihaourobranco.png",
+      imagem: "assets/img/esfihas/esfihaourobranco.png",
     },
     {
       id: "esfiha-sonho-de-valsa",
@@ -238,7 +238,7 @@ document.addEventListener("DOMContentLoaded", () => {
       nome: "Sonho de Valsa",
       descricao: "Esfiha doce com chocolate e bombom Sonho de Valsa",
       preco: 8,
-      imagem: "./img/esfihas/esfihasonho.png",
+      imagem: "assets/img/esfihas/esfihasonho.png",
     },
     {
       id: "esfiha-pacoca-doce-de-leite",
@@ -246,7 +246,7 @@ document.addEventListener("DOMContentLoaded", () => {
       nome: "Paçoca c/ Doce de Leite",
       descricao: "Esfiha doce com paçoca e doce de leite",
       preco: 8,
-      imagem: "./img/esfihas/pacoca.png",
+      imagem: "assets/img/esfihas/pacoca.png",
     },
     {
       id: "esfiha-chocolate-preto",
@@ -254,7 +254,7 @@ document.addEventListener("DOMContentLoaded", () => {
       nome: "Chocolate Preto",
       descricao: "Esfiha doce com cobertura de chocolate preto",
       preco: 7,
-      imagem: "./img/esfihas/chocolatepreto.png",
+      imagem: "assets/img/esfihas/chocolatepreto.png",
     },
     {
       id: "esfiha-chocolate-branco",
@@ -262,7 +262,7 @@ document.addEventListener("DOMContentLoaded", () => {
       nome: "Chocolate Branco",
       descricao: "Esfiha doce com cobertura de chocolate branco",
       preco: 7,
-      imagem: "./img/esfihas/esfihachocolatebranco.png",
+      imagem: "assets/img/esfihas/esfihachocolatebranco.png",
     },
     {
       id: "esfiha-banoffee",
@@ -270,7 +270,7 @@ document.addEventListener("DOMContentLoaded", () => {
       nome: "Banoffe",
       descricao: "Esfiha doce com banana e cobertura cremosa",
       preco: 8,
-      imagem: "./img/esfihas/esfihabanoffe.png",
+      imagem: "assets/img/esfihas/esfihabanoffe.png",
     },
 
     {
@@ -279,7 +279,7 @@ document.addEventListener("DOMContentLoaded", () => {
       nome: "Pastel Especial",
       descricao: "Escolha o sabor no card antes de adicionar ao pedido.",
       preco: 15,
-      imagem: "./img/pastel/pastel2.png",
+      imagem: "assets/img/pastel/pastel2.png",
       rotulo: "Pastéis Salgados e Doces",
       sabores: [
         {
@@ -382,7 +382,7 @@ document.addEventListener("DOMContentLoaded", () => {
       descricao:
         "Combo com 4 pastéis 11x11 cm, 4 esfihas e 1 porção de batata frita (300g). Escolha os sabores e informe nas observações ou pelo WhatsApp ao finalizar o pedido.",
       preco: 80,
-      imagem: "./img/combo.png",
+      imagem: "assets/img/combo.png",
     },
 
     // BEBIDAS
@@ -393,7 +393,7 @@ document.addEventListener("DOMContentLoaded", () => {
   nome: "Coca-Cola Lata 350ml",
   descricao: "Escolha sua bebida favorita e deixe seu pedido completo.",
   preco: 5.99,
-  imagem: "./img/bebidas/coca-lata.jfif",
+  imagem: "assets/img/bebidas/coca-lata.jfif",
 },
 {
   id: "pepsi-lata",
@@ -401,7 +401,7 @@ document.addEventListener("DOMContentLoaded", () => {
   nome: "Pepsi Lata 350ml",
   descricao: "Escolha sua bebida favorita e deixe seu pedido completo.",
   preco: 5.99,
-  imagem: "./img/bebidas/pepsi-lata.jpg",
+  imagem: "assets/img/bebidas/pepsi-lata.jpg",
 },
 {
   id: "sprite-lata",
@@ -409,7 +409,7 @@ document.addEventListener("DOMContentLoaded", () => {
   nome: "Sprite Lata 350ml",
   descricao: "Escolha sua bebida favorita e deixe seu pedido completo.",
   preco: 5.99,
-  imagem: "./img/bebidas/sprite-lata.jfif",
+  imagem: "assets/img/bebidas/sprite-lata.jfif",
 },
 {
   id: "coca-cola-2l",
@@ -417,7 +417,7 @@ document.addEventListener("DOMContentLoaded", () => {
   nome: "Coca-Cola 2L",
   descricao: "Escolha sua bebida favorita e deixe seu pedido completo.",
   preco: 11.50,
-  imagem: "./img/bebidas/coca-2l.png",
+  imagem: "assets/img/bebidas/coca-2l.png",
 },
 {
   id: "pepsi-2l",
@@ -425,7 +425,7 @@ document.addEventListener("DOMContentLoaded", () => {
   nome: "Pepsi 2L",
   descricao: "Escolha sua bebida favorita e deixe seu pedido completo.",
   preco: 11.50,
-  imagem: "./img/bebidas/pepsi-2l.png",
+  imagem: "assets/img/bebidas/pepsi-2l.png",
 },
   ];
 

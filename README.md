@@ -1,7 +1,7 @@
 # Verona Delivery
 
-A production-oriented online menu and ordering interface built for a real local delivery business.  
-This project was designed to improve the customer ordering experience through a responsive, visually polished, and mobile-first website that showcases pizzas, esfihas, and pastries while streamlining orders through WhatsApp.
+A mobile-first online menu and ordering interface with WhatsApp checkout integration,
+showcasing pizzas, esfihas, and drinks with a responsive and visually polished design.
 
 ---
 
@@ -11,7 +11,7 @@ This project was designed to improve the customer ordering experience through a 
 
 ---
 
-## Project Preview
+## Screenshots
 
 ### Hero Section
 ![Hero Preview](./assets/readme/hero-preview.png)
@@ -28,32 +28,14 @@ This project was designed to improve the customer ordering experience through a 
 
 ## Overview
 
-**Verona Delivery** is a real-world front-end project developed for a local food delivery business.  
-Instead of building a generic showcase page, the goal was to create a practical digital ordering experience focused on usability, product presentation, and business value.
+**Verona Delivery** is a front-end project built to simulate a complete food delivery experience.
 
-The website allows customers to browse a structured menu, explore product categories, view product images, add items to a cart, fill in order details, and complete the checkout flow through WhatsApp.
-
-This project reflects the kind of front-end work that goes beyond visual layout — combining branding, user experience, mobile responsiveness, state handling, and production deployment into a business-focused solution.
-
+The goal was to go beyond a generic showcase page and build a practical digital ordering
+flow — combining product presentation, cart management, and WhatsApp checkout integration
+into a mobile-first, business-oriented solution.
 ---
 
-## Why This Project Matters
-
-This is not a fictional landing page or a UI exercise.
-
-It was built to support a **real local business**, with real products, real customer flows, and real operational needs.  
-That meant every design and development decision had to balance:
-
-- visual quality
-- mobile usability
-- easy menu navigation
-- simple ordering flow
-- content flexibility
-- practical deployment for day-to-day use
-
----
-
-## Core Features
+## Features
 
 - Responsive layout optimized for desktop, tablet, and mobile
 - Premium hero section with branded promotional banner
@@ -158,3 +140,12 @@ The interface was shaped around a few core priorities:
 │       ├── cart-order.png
 │       └── mobile-layout.png
 └── README.md
+
+``` 
+---
+
+## 👨‍💻 Author
+
+Gabriel Pereira Schwanke
+
+Frontend Developer | Systems Analysis and Development Student
