@@ -15,6 +15,70 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const MENU = [
+    //hamburguer//
+    {
+  id: "brutus",
+  categoria: "hamburguer",
+  nome: "Brutus",
+  descricao:
+    "Pão, alface, tomate, blend de costela 150g, cheddar, bacon e maionese verde.",
+  preco: 25.99,
+  imagem: "assets/img/hamburgueres/brutus.jpeg",
+  destaque: true,
+},
+{
+  id: "onion-black",
+  categoria: "hamburguer",
+  nome: "Onion Black",
+  descricao:
+    "Pão, blend de costela 150g, cheddar, anel de cebola, cebola caramelizada e maionese verde.",
+  preco: 26.99,
+  imagem: "assets/img/hamburgueres/orion.jpeg",
+  destaque: false,
+},
+{
+  id: "smoked-rib-royale",
+  categoria: "hamburguer",
+  nome: "Smoked Rib Royale",
+  descricao:
+    "Pão, alface, tomate, blend de costela 150g, costela desfiada defumada 140g, cheddar, bacon e maionese verde.",
+  preco: 28.99,
+  imagem: "assets/img/hamburgueres/smoke.jpeg",
+  destaque: true,
+},
+{
+  id: "double-cheddar-smash",
+  categoria: "hamburguer",
+  nome: "Double Cheddar Smash",
+  descricao:
+    "Pão, maionese verde, 2 blends de costela 150g, cheddar e bacon.",
+  preco: 31.99,
+  imagem: "assets/img/hamburgueres/cheddarsmash.jpeg",
+  destaque: true,
+},
+{
+  id: "salada",
+  categoria: "hamburguer",
+  nome: "Salada",
+  descricao:
+    "Pão, blend de costela 150g, alface, tomate e maionese verde.",
+  preco: 22.99,
+  imagem: "assets/img/hamburgueres/salada.jpeg",
+  destaque: false,
+},
+{
+  id: "kids",
+  categoria: "hamburguer",
+  nome: "Kids",
+  descricao:
+    "Pão, blend de 150g, queijo muçarela e maionese.",
+  preco: 19.99,
+  imagem: "assets/img/hamburgueres/kids.jpeg",
+  destaque: false,
+},
+
+    //pizzas// 
+    
     {
       id: "iscas-fritas",
       categoria: "salgadas",
@@ -443,7 +507,7 @@ document.addEventListener("DOMContentLoaded", () => {
 };
 
   const state = {
-    currentCategory: "salgadas",
+    currentCategory: "hamburguer",
     cart: getStoredCart(),
     toastTimer: null,
   };
