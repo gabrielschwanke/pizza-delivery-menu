@@ -164,7 +164,7 @@ document.addEventListener("DOMContentLoaded", () => {
       preco: 40,
       imagem: "assets/img/pizzas/alhoeoleo.jpeg",
     },
-
+/// pizzas doces/// 
     {
       id: "romeu-julieta",
       categoria: "doces",
@@ -207,7 +207,7 @@ document.addEventListener("DOMContentLoaded", () => {
       preco: 60,
       imagem: "assets/img/pizzas/banoffee.jpeg",
     },
-
+/// esfihas ///
     {
       id: "esfiha-calabresa",
       categoria: "esfihas-salgadas",
@@ -336,7 +336,7 @@ document.addEventListener("DOMContentLoaded", () => {
       preco: 8,
       imagem: "assets/img/esfihas/esfihabanoffe.png",
     },
-
+///pastel///
     {
       id: "pastel-salgado",
       categoria: "pasteis",
@@ -438,7 +438,7 @@ document.addEventListener("DOMContentLoaded", () => {
         },
       ],
     },
-
+///combos///
     {
       id: "combo-espetacular",
       categoria: "combo",
@@ -448,6 +448,117 @@ document.addEventListener("DOMContentLoaded", () => {
       preco: 80,
       imagem: "assets/img/combo.png",
     },
+///lanches///
+  {
+  id: "cachorro-simples",
+  categoria: "lanches",
+  nome: "Cachorro Simples",
+  descricao:
+    "Pão, molho vermelho, salsicha, milho, ervilha e batata palha.",
+  preco: 11.99,
+  imagem: "assets/img/lanches/cachorro-simples.png",
+  destaque: false,
+},
+
+{
+  id: "cachorro-completo",
+  categoria: "lanches",
+  nome: "Cachorro Completo",
+  descricao:
+    "Pão, molho vermelho, 2 salsichas, milho, ervilha, presunto, queijo, ovo e batata palha.",
+  preco: 18.99,
+  imagem: "assets/img/lanches/cachorro-completo.jpg",
+  destaque: false,
+},
+
+{
+  id: "xis-salada",
+  categoria: "lanches",
+  nome: "Xis Salada",
+  descricao:
+    "Pão, carne de costela, alface, tomate, milho, maionese verde, ovo, queijo, presunto, ketchup e mostarda.",
+  preco: 22.99,
+  imagem: "assets/img/lanches/xis-salada.jpeg",
+  destaque: false,
+},
+
+{
+  id: "bauru-strogonoff",
+  categoria: "lanches",
+  nome: "Bauru Strogonoff",
+  descricao:
+    "Pão, alface, tomate, queijo, presunto, strogonoff 250g, batata palha e maionese verde.",
+  preco: 27.99,
+  imagem: "assets/img/lanches/bauru-strogonoff.jpeg",
+  destaque: false,
+},
+
+{
+  id: "xis-coracao",
+  categoria: "lanches",
+  nome: "Xis Coração",
+  descricao:
+    "Pão, coração acebolado 250g, milho, presunto, queijo, maionese verde, ketchup e mostarda.",
+  preco: 25.99,
+  imagem: "assets/img/lanches/xis-coracao.jpeg",
+  destaque: false,
+},
+
+{
+  id: "bauru",
+  categoria: "lanches",
+  nome: "Bauru",
+  descricao:
+    "Pão, carne 250g, alface, tomate, queijo, presunto, maionese verde, milho e ovo.",
+  preco: 27.99,
+  imagem: "assets/img/lanches/bauru.png",
+  destaque: false,
+},
+
+///porções/// 
+
+{
+  id: "Porção Batata Frita",
+  categoria: "porções",
+  nome: "Porção Batata Frita 400g (Cheddar e Bacon)",
+  descricao:
+    "400g de batatas super crocantes por fora e macias por dentro, cobertas com uma camada generosa de cheddar cremoso e finalizadas com muito bacon picadinho bem crocante. O acompanhamento perfeito que rouba a cena!",
+  preco: 31.99,
+  imagem: "assets/img/porcoes/batata-cheddar400.jfif",
+  destaque: false,
+},
+{
+  id: "Porção Batata Frita",
+  categoria: "porções",
+  nome: "Porção Batata Frita 250g (Cheddar e Bacon)",
+  descricao:
+    "250g de batatas super crocantes por fora e macias por dentro, cobertas com uma camada generosa de cheddar cremoso e finalizadas com muito bacon picadinho bem crocante. O acompanhamento perfeito que rouba a cena!",
+  preco: 19.90,
+  imagem: "assets/img/porcoes/batata-cheddar250.png",
+  destaque: false,
+},
+{
+  id: "porção",
+  categoria: "porções",
+  nome: "Porção Batata Frita 400g",
+  descricao:
+    "400g de batatas super crocantes por fora e macias por dentro, o acompanhamento perfeito que rouba a cena!",
+  preco: 17.90,
+  imagem: "assets/img/porcoes/batata400.png",
+  destaque: false,
+},
+{
+  id: "porção",
+  categoria: "porções",
+  nome: "Batata Frita 250g",
+  descricao:
+    "250g de batatas super crocantes por fora e macias por dentro, o acompanhamento perfeito que rouba a cena!",
+  preco: 12.90,
+  imagem: "assets/img/porcoes/batata250.jpg",
+  destaque: false,
+},
+
+
 
     // BEBIDAS
 // BEBIDAS
@@ -1009,6 +1120,8 @@ document.addEventListener("DOMContentLoaded", () => {
       pasteis: "Pastel",
       combo: "combo",
       lanches: "lanches",
+      hamburguer: "hambúrguer",
+      porções: "porções",
       bebidas: "Bebidas",
     };
 
