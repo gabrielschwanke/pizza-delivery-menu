@@ -2,8 +2,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const CONFIG = {
     storeName: "Estação do Sabor",
     slogan: "Sabor que conquista!",
-    whatsappNumber: "5559999999999", // coloque aqui o número real com DDI + DDD
-    whatsappDisplay: "(53) 99999-9999",
+    whatsappNumber: "5553920002893", // coloque aqui o número real com DDI + DDD
+    whatsappDisplay: "(53) 92000-2893",
     businessHours: "De segunda a segunda, das 20h às 00h.",
     address: "Rua Passos Pereira, 437 - Areal, Pelotas",
     deliveryAreas: "Centro e bairros próximos",
