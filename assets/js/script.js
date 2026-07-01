@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   const CONFIG = {
-    storeName: "Verona Delivery",
+    storeName: "Estação do Sabor",
     slogan: "Sabor que conquista!",
     whatsappNumber: "5559999999999", // coloque aqui o número real com DDI + DDD
     whatsappDisplay: "(53) 99999-9999",
