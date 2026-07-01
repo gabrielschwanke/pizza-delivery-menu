@@ -4,8 +4,8 @@ document.addEventListener("DOMContentLoaded", () => {
     slogan: "Sabor que conquista!",
     whatsappNumber: "5553920002893", // coloque aqui o número real com DDI + DDD
     whatsappDisplay: "(53) 92000-2893",
-    businessHours: "De segunda a segunda, das 20h às 00h.",
-    address: "Rua Passos Pereira, 437 - Areal, Pelotas",
+    businessHours: "De segunda a segunda, das 19h30 às 23h30.",
+    address: "Rua Professor Mário Peiruque 636, Areal, Pelotas (Arena Fox)",
     deliveryAreas: "Centro e bairros próximos",
     promoDays: [0, 1, 2, 3, 4, 5, 6],
     promoFixedPrice: 39.9,
