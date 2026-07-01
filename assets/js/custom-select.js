@@ -45,8 +45,13 @@
           },
         }),
       );
+
+    if (nativeInput) {
+        nativeInput.dispatchEvent(new Event("change", { bubbles: true }));
+
     }
   }
+}
 
   function focusOption(customSelect, index) {
     const options = [
