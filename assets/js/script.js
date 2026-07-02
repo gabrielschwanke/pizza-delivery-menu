@@ -571,22 +571,6 @@ document.addEventListener("DOMContentLoaded", () => {
   imagem: "assets/img/bebidas/coca-lata.jfif",
 },
 {
-  id: "pepsi-lata",
-  categoria: "bebidas",
-  nome: "Pepsi Lata 350ml",
-  descricao: "Escolha sua bebida favorita e deixe seu pedido completo.",
-  preco: 6,
-  imagem: "assets/img/bebidas/pepsi-lata.jpg",
-},
-{
-  id: "sprite-lata",
-  categoria: "bebidas",
-  nome: "Sprite Lata 350ml",
-  descricao: "Escolha sua bebida favorita e deixe seu pedido completo.",
-  preco: 6,
-  imagem: "assets/img/bebidas/sprite-lata.jfif",
-},
-{
   id: "coca-cola-2l",
   categoria: "bebidas",
   nome: "Coca-Cola 2L",
@@ -595,12 +579,12 @@ document.addEventListener("DOMContentLoaded", () => {
   imagem: "assets/img/bebidas/coca-2l.png",
 },
 {
-  id: "pepsi-2l",
+  id: "Água 500ml",
   categoria: "bebidas",
-  nome: "Pepsi 2L",
+  nome: "Água 500ml",
   descricao: "Escolha sua bebida favorita e deixe seu pedido completo.",
-  preco: 14,
-  imagem: "assets/img/bebidas/pepsi-2l.png",
+  preco: 3,
+  imagem: "assets/img/bebidas/agua.jpg",
 },
   ];
 
