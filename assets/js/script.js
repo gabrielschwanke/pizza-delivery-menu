@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     whatsappDisplay: "(53) 92000-2893",
     businessHours: "De segunda a segunda, das 19h30 às 23h30.",
     address: "Rua Professor Mário Peiruque 636, Areal, Pelotas (Arena Fox)",
-    deliveryAreas: "Centro e bairros próximos",
+    deliveryAreas: "Entregamos em até 3km por uma taxa fixa de R$ 6,00. Para endereços mais distantes, o valor da entrega é calculado ao finalizar seu pedido.",
     promoDays: [0, 1, 2, 3, 4, 5, 6],
     promoFixedPrice: 39.9,
     promoItems: ["calabresa", "mussarela", "frango-catupiry", "napolitana"],
