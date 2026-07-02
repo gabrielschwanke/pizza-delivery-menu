@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     promoDays: [0, 1, 2, 3, 4, 5, 6],
     promoFixedPrice: 39.9,
     promoItems: ["calabresa", "mussarela", "frango-catupiry", "napolitana"],
-    deliveryFee: 8, // ex.: 5 para R$ 5,00
+    deliveryFee: 6, // ex.: 5 para R$ 5,00
     minOrder: 0, // ex.: 30 para pedido mínimo de R$ 30,00
   };
 
