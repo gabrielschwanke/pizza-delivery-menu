@@ -38,10 +38,15 @@
       <div class="container hero__grid">
         <div class="hero__content">
           <span class="badge">🍕 Delivery rápido • Atendimento via WhatsApp</span>
-          <a href="#pedido" class="hero-promo hero-promo--inside" aria-label="Ver promoção de inauguração e ir para o pedido">
-            <img src="assets/img/novobanner.png" alt="Banner Principal" />
+          <a href="#pedido" class="hero-promo hero-promo--inside">
+            <video class="banner-mobile" autoplay muted loop playsinline>
+              <source src="assets/video/hamburguer.mp4" type="video/mp4">
+            </video>
+            <div class="hero-banner__overlay">
+              <h2>Rapidez e praticidade</h2>
+              <p>na hora de fazer seu pedido</p>
+            </div>
           </a>
-
           <div class="hero__actions">
             <a class="btn btn--primary" href="#cardapio">Ver cardápio</a>
             <a class="btn btn--secondary" href="#pedido">Montar pedido</a>
@@ -67,7 +72,7 @@
                 Hambúrguer
               </button>
 
-              <button class="filter-btn" data-category="salgadas" type="button"style="display: none;">
+              <button class="filter-btn" data-category="salgadas" type="button" style="display: none;">
                 Pizzas Salgadas
               </button>
               <button class="filter-btn" data-category="doces" type="button" style="display: none;">
@@ -259,7 +264,7 @@
         </header>
 
         <div class="info-grid">
-          
+
           <article class="info-card">
             <strong>Horário de atendimento</strong>
             <p data-business-hours>De Segunda a Segunda, das 19h30 às 23h30.</p>
