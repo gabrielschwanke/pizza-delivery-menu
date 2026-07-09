@@ -1198,7 +1198,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // 2. Lógica dos Badges (Atualizada)
         const badgeDestaque = item.destaque
-          ? `<span class="badge-destaque">Mais Pedida</span>`
+          ? `<span class="badge-destaque">Mais Pedido</span>`
           : "";
         const badgeOferta = isPromoActive
           ? `<span class="badge-oferta">Oferta</span>`
