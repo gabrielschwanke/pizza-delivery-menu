@@ -440,13 +440,13 @@ document.addEventListener("DOMContentLoaded", () => {
     },
 ///combos///
     {
-      id: "combo-espetacular",
+      id: "combo-smash",
       categoria: "combo",
-      nome: "Combo Espetacular",
+      nome: "Combo Smash Cheeddar",
       descricao:
-        "Combo com 4 pastéis 11x11 cm, 4 esfihas e 1 porção de batata frita (300g). Escolha os sabores e informe nas observações ou pelo WhatsApp ao finalizar o pedido.",
-      preco: 80,
-      imagem: "assets/img/combo.png",
+        "Combo individual, acompanha Hambúrguer Smash Cheeddar partido no meio, Coca lata (350ml) e 100g de Batata frita crocante.",
+      preco: 34.90,
+      imagem: "assets/img/combos/combo-smash.png",
     },
 ///lanches///
   {
