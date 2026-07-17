@@ -149,6 +149,4 @@ pizza-delivery-menu/
 
 ## 👨‍💻 Author
 
-Gabriel Pereira Schwanke
-
-Frontend Developer | Systems Analysis and Development Student
+Gabriel Pereira Schwanke — Frontend Developer
