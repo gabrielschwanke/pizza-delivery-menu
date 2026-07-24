@@ -448,6 +448,15 @@ document.addEventListener("DOMContentLoaded", () => {
       preco: 34.90,
       imagem: "assets/img/combos/combo-smash.png",
     },
+    {
+      id: "combo-estacao",
+      categoria: "combo",
+      nome: "Combo Estação",
+      descricao:
+        "4 hambúrgueres (pão, carne suculenta, queijo e bacon) cortados ao meio e mergulhados no cheddar cremoso, 200g de Batata Frita Especial: Crocante, finalizada com pedaços de bacon, Onion Rings: Anéis de cebola dourados e crocantes.",
+      preco: 110.00,
+      imagem: "assets/img/combos/combo-estacao.png",
+    },
 ///lanches///
   {
   id: "cachorro-simples",
@@ -576,7 +585,7 @@ document.addEventListener("DOMContentLoaded", () => {
   nome: "Coca-Cola 2L",
   descricao: "Escolha sua bebida favorita e deixe seu pedido completo.",
   preco: 14,
-  imagem: "assets/img/bebidas/coca-2l.png",
+  imagem: "assets/img/bebidas/coca-2l.jpeg",
 },
 {
   id: "Água 500ml",
@@ -584,7 +593,7 @@ document.addEventListener("DOMContentLoaded", () => {
   nome: "Água 500ml",
   descricao: "Escolha sua bebida favorita e deixe seu pedido completo.",
   preco: 3,
-  imagem: "assets/img/bebidas/agua.jpg",
+  imagem: "assets/img/bebidas/agua.png",
 },
   ];
 
